@@ -7,6 +7,7 @@
   <title>Stolzwichtel - Spaß mit Flaggen 🚩</title>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <meta name="description"
     content="Du bist kein Patriot. Nicht mal deine eigene Flagge kennst du richtig! Du bist einfach nur lächerlich! 🤷🏼‍♂️">
   <script defer src="https://statistics.disane.dev/script.js"
@@ -16,6 +17,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <style type="text/tailwindcss">
+
     section, .card {
       @apply mb-6
     }
@@ -38,7 +40,7 @@
             @apply text-gray-200; /* Even lighter strong text for dark mode */
         }
     }
-</style>
+  </style>
 
   <!-- Open Graph meta tags -->
   <meta property="og:title" content="Stolzwichtel - Spaß mit Flaggen 🚩">
@@ -59,7 +61,8 @@
 </head>
 
 <body class="text-gray-900 bg-gray-100 dark:text-gray-100 dark:bg-gray-900">
-  <header class="bg-black text-white p-4 shadow-md flex justify-between items-center dark:bg-black-800">
+  <header
+    class="bg-black text-white p-4 shadow-md flex justify-between items-center dark:bg-black-800 sticky top-0 z-10">
     <div class="avatar">
       <div class="w-8 rounded-full">
         <img src="img/stolz_monat.png" />
@@ -67,58 +70,97 @@
     </div>
 
     <h1 class="text-2xl font-bold">Stolzwichtel<span class="hidden md:inline"> - es ist wieder soweit 🤷🏼‍♂️<span></h1>
-    <button class="btn btn-white" onclick="sharePage()">📫 Teilen</button>
+    <button class="btn btn-white animate__animated animate__pulse animate__infinite" onclick="sharePage()">📫
+      Teilen</button>
   </header>
 
-  <div class="container mx-auto p-6">
+  <div class="container mx-auto p-6 z-20">
     <p class="text-center mb-6">
       Sieben Versuche gebraucht – aber nicht eine einzige Farbe getroffen...
     </p>
 
-    <section class="mb-6 items-center flex w-full">
-      <img class="h-72 aspect-video m-auto object-scale-down" src="img/fun_with_flaggs.gif" />
+    <section class="mb-6 item-center flex flex-col sm:flex-row w-full m-4 gap-6">
+      <div class="info w-full md:w-50">
+        <h1 class="text-2xl font-semibold mb-4">
+          Sie sind wieder da 😐
+        </h1>
+        <div class="w-full">
+          Es ist wieder soweit, die Rechten versuchen sich wieder als Patrioten zu inszenieren und scheitern kläglich.
+          Dieses Mal mit einer abgewandelten Deutschland-Flagge, die sie als "Stolzmonat"-Flagge bezeichnen. Doch wie so
+          oft, haben sie nicht einmal die Farben der deutschen Flagge richtig getroffen. Aber keine Sorge, wir helfen
+          gerne nach und erklären, warum es wichtig ist, die Farben der Flagge zu kennen und warum es falsch ist, auf
+          eine
+          Flagge stolz zu sein.
+
+          <p class="mt-4">
+            <strong>Stolzwichtel</strong> ist ein Spaßprojekt, das die Farben der deutschen Flagge und die Bedeutung von
+            Nationalstolz humorvoll auf die Schippe nimmt. Wir möchten auf unterhaltsame Weise zeigen, wie leicht es
+            ist,
+            die Farben einer Flagge zu verwechseln und warum es wichtiger ist, auf persönliche Leistungen und Beiträge
+            stolz zu sein. Wir hoffen, dass du beim Lesen und Lernen über die deutsche Flagge und ihre Farben genauso
+            viel
+        </div>
+      </div>
+
+      <div class="mb-4 w-full">
+        <h1 class="text-2xl font-semibold mb-4">
+          Die Geschichte der Flagge 🤯
+        </h1>
+
+        <iframe class="aspect-video w-full h-full p-0 m-0"
+          src="https://www.youtube.com/embed/XQmJve3yD9Q?si=iDC8KRXynjJ4QdcD&amp;controls=0&autoplay=1"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+      </div>
     </section>
 
-    <div class="flex flex-col lg:flex-row justify-center mb-6 w-full space-y-6 lg:space-y-0 lg:space-x-6">
-      <div class="flex flex-col relative w-full lg:w-1/2 card p-4 bg-white shadow-md dark:bg-gray-800 h-80">
-        <div class="w-full text-center m-3 font-bold">Falsch ❌</div>
-        <div class="flex-grow tooltip" data-tip="RGB 1/0/0 (#010000)">
-          <div class="w-full h-full" style="background-color: #010000"></div>
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">
+        Was ist richtig und was ist falsch? 🤔
+      </h2>
+      <div class="flex flex-col lg:flex-row justify-center mb-6 w-full space-y-6 lg:space-y-0 lg:space-x-6">
+        <div class="flex flex-col relative w-full lg:w-1/2 card p-4 bg-white shadow-md dark:bg-gray-800 h-80">
+          <div class="w-full text-center m-3 font-bold">Falsch ❌</div>
+          <div class="flex-grow tooltip" data-tip="RGB 1/0/0 (#010000)">
+            <div class="w-full h-full" style="background-color: #010000"></div>
+          </div>
+          <div class="flex-grow tooltip" data-tip="RGB 67/14/20 (#430e14)">
+            <div class="w-full h-full" style="background-color: #430e14"></div>
+          </div>
+          <div class="flex-grow tooltip" data-tip="RGB 142/24/25 (#8e1819)">
+            <div class="w-full h-full" style="background-color: #8e1819"></div>
+          </div>
+          <div class="flex-grow tooltip" data-tip="RGB 231/37/43 (#e7252b)">
+            <div class="w-full h-full" style="background-color: #e7252b"></div>
+          </div>
+          <div class="flex-grow tooltip" data-tip="RGB 240/125/47 (#f07d2f)">
+            <div class="w-full h-full" style="background-color: #f07d2f"></div>
+          </div>
+          <div class="flex-grow tooltip" data-tip="RGB 255/201/14 (#ffc90e)">
+            <div class="w-full h-full" style="background-color: #ffc90e"></div>
+          </div>
+          <div class="flex-grow tooltip" data-tip="RGB 250/234/39 (#faea27)">
+            <div class="w-full h-full" style="background-color: #faea27"></div>
+          </div>
         </div>
-        <div class="flex-grow tooltip" data-tip="RGB 67/14/20 (#430e14)">
-          <div class="w-full h-full" style="background-color: #430e14"></div>
-        </div>
-        <div class="flex-grow tooltip" data-tip="RGB 142/24/25 (#8e1819)">
-          <div class="w-full h-full" style="background-color: #8e1819"></div>
-        </div>
-        <div class="flex-grow tooltip" data-tip="RGB 231/37/43 (#e7252b)">
-          <div class="w-full h-full" style="background-color: #e7252b"></div>
-        </div>
-        <div class="flex-grow tooltip" data-tip="RGB 240/125/47 (#f07d2f)">
-          <div class="w-full h-full" style="background-color: #f07d2f"></div>
-        </div>
-        <div class="flex-grow tooltip" data-tip="RGB 255/201/14 (#ffc90e)">
-          <div class="w-full h-full" style="background-color: #ffc90e"></div>
-        </div>
-        <div class="flex-grow tooltip" data-tip="RGB 250/234/39 (#faea27)">
-          <div class="w-full h-full" style="background-color: #faea27"></div>
+        <!-- <div class="divider divider-horizontal hidden lg:block"></div> -->
+        <div class="flex flex-col w-full lg:w-1/2 card p-4 bg-white shadow-md dark:bg-gray-800 h-80">
+          <div class="w-full text-center m-3 font-bold">Richtig ✅</div>
+          <div class="flex-grow tooltip" data-tip="RGB 0/0/0 (#000000)">
+            <div class="w-full h-full" style="background-color: #000000"></div>
+          </div>
+          <div class="flex-grow tooltip" data-tip="RGB 255/0/0 (#ff0000)">
+            <div class="w-full h-full" style="background-color: #ff0000"></div>
+          </div>
+          <div class="flex-grow tooltip" data-tip="RGB 255/204/0 (#ffcc00)">
+            <div class="w-full h-full" style="background-color: #ffcc00"></div>
+          </div>
         </div>
       </div>
-      <!-- <div class="divider divider-horizontal hidden lg:block"></div> -->
-      <div class="flex flex-col w-full lg:w-1/2 card p-4 bg-white shadow-md dark:bg-gray-800 h-80">
-        <div class="w-full text-center m-3 font-bold">Richtig ✅</div>
-        <div class="flex-grow tooltip" data-tip="RGB 0/0/0 (#000000)">
-          <div class="w-full h-full" style="background-color: #000000"></div>
-        </div>
-        <div class="flex-grow tooltip" data-tip="RGB 255/0/0 (#ff0000)">
-          <div class="w-full h-full" style="background-color: #ff0000"></div>
-        </div>
-        <div class="flex-grow tooltip" data-tip="RGB 255/204/0 (#ffcc00)">
-          <div class="w-full h-full" style="background-color: #ffcc00"></div>
-        </div>
-      </div>
-    </div>
-    <p class="text-center mb-6">Das muss diese Vaterlandsliebe sein ...</p>
+      <p class="text-center mb-6">Da hört dann auch schon die Vaterlandsliebe auf...</p>
+    </section>
 
     <section>
       <h2 class="text-2xl font-semibold mb-4">
