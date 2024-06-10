@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <style type="text/tailwindcss">
-    section {
+    section, .card {
       @apply mb-6
     }
     /* Standard (Light Mode) Styles */
@@ -60,8 +60,7 @@
   <header class="bg-black text-white p-4 shadow-md flex justify-between items-center dark:bg-black-800">
     <div class="avatar">
       <div class="w-8 rounded-full">
-        <img
-          src="https://images.gutefrage.net/media/fragen/bilder/wann-ist-endlich-wieder-stolzmonat/0_big.png?v=1713572154761" />
+        <img src="img/stolz_monat.png" />
       </div>
     </div>
 
@@ -75,8 +74,7 @@
     </p>
 
     <section class="mb-6 items-center flex w-full">
-      <img class="h-72 aspect-video m-auto object-scale-down"
-        src="https://media1.giphy.com/media/XfDPdSRhYFUhIU7EPw/giphy.gif?cid=6c09b952om03mja34lwf2wnm67abdgezzl4l05e6mlu7ge24&ep=v1_gifs_search&rid=giphy.gif&ct=g" />
+      <img class="h-72 aspect-video m-auto object-scale-down" src="img/fun_with_flaggs.gif" />
     </section>
 
     <div class="flex flex-col lg:flex-row justify-center mb-6 w-full space-y-6 lg:space-y-0 lg:space-x-6">
@@ -123,10 +121,69 @@
     <section>
       <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
         <h2 class="text-2xl font-semibold mb-4">
-          Warum die gewählten Farben falsch sind ❌
+          "Stolzmonat"-Farben falsch ❌
         </h2>
+        <p>
+          Auf der Grundlage des Beschlusses des Bundeskabinetts vom 2. Juni 1999 wurde das Corporate-Design der
+          Bundesregierung entwickelt.
+          Für Abbildungen der Flagge in Druckerzeugnissen und auf Bildschirmen verwendet die Bundesregierung demnach
+          folgende RAL-Farbwerte, mit deren Entsprechung im Pantone- und CMYK-System für Wort-Bild-Marken
+          („Firmenlogos“) und RGB für Online-Medien:
+        </p>
+
+        <table class="w-full md:w-6/12 border border-gray-600 bg-gray-600 border-collapse text-left my-6 self-center">
+          <thead>
+            <tr class="text-center bg-gray-600">
+              <th class="p-2 w-2/12">Farbe</th>
+              <th class="w-40 p-2 hidden md:table-cell">RAL (Stoff)</th>
+              <th class="w-40 p-2 hidden md:table-cell">RAL (Druck)</th>
+              <th class="w-40 p-2 hidden md:table-cell">Pantone</th>
+              <th class="w-40 p-2 hidden md:table-cell">CMYK</th>
+              <th class="w-40 p-2">RGB (Hex)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center p-2">Schwarz</td>
+              <td class="bg-[#2a292a] text-white text-center p-2 hidden md:table-cell" title="0A0A0D">
+                9017<br>Verkehrsschwarz<br>2A 29 2A
+              </td>
+              <td class="bg-[#0a0a0d] text-white text-center p-2 hidden md:table-cell" title="0A0A0D">
+                9005<br>Tiefschwarz<br>0A 0A 0D</td>
+              <td class="bg-[#17191a] text-white text-center p-2 hidden md:table-cell" title="17191A">Black</td>
+              <td class="bg-[#000000] text-white text-center p-2 hidden md:table-cell" title="000">0-0-0-100</td>
+              <td class="bg-[#000000] text-white text-center p-2" title="000">0,0,0<br>(#000000)</td>
+            </tr>
+            <tr>
+              <td class="text-center p-2">Rot</td>
+              <td class="bg-[#c1121c] text-white text-center p-2 hidden md:table-cell" title="C1121C">
+                3020<br>Verkehrsrot<br>C1 12 1C</td>
+              <td class="bg-[#c1121c] text-white text-center p-2 hidden md:table-cell" title="C1121C">
+                3020<br>Verkehrsrot<br>C1 12 1C</td>
+              <td class="bg-[#c12d28] text-white text-center p-2 hidden md:table-cell" title="C11D28">485</td>
+              <td class="bg-[#ff0000] text-white text-center p-2 hidden md:table-cell" title="F00">0-100-100-0</td>
+              <td class="bg-[#ff0000] text-white text-center p-2" title="F00">255,0,0<br>(#FF0000)</td>
+            </tr>
+            <tr>
+              <td class="text-center p-2">Gold</td>
+              <td class="bg-[#ff9b00] text-center p-2 hidden md:table-cell" title="EEC900">1028<br>Melonengelb<br>FF 9B
+                00
+              </td>
+              <td class="bg-[#eec900] text-center p-2 hidden md:table-cell" title="EEC900">1021<br>Rapsgelb<br>EE C9 00
+              </td>
+              <td class="bg-[#ffbd00] text-center p-2 hidden md:table-cell" title="FFBD00">Yellow: 765 g,<br>Red 032: 26
+                g,<br>Black: 11
+                g,<br>transp. White: 198 g,<br>Alternativ 7405</td>
+              <td class="bg-[#edd100] text-center p-2 hidden md:table-cell" title="EDD100">0-12-100-5</td>
+              <td class="bg-[#ffcc00] text-center p-2" title="FC0">255,204,0<br>(#FFCC00)</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
         <p class="mb-4">
-          Die Farben in der linken Grafik sind inkorrekt und weichen deutlich
+          Die Farben in der "Stolzmonat"-Bilder sind daher inkorrekt und weichen deutlich
           von den offiziellen Farbtönen der deutschen Flagge ab. Falsche
           Farbtöne können die Bedeutung und Symbolik verfälschen und zeigen
           oft ein mangelndes Verständnis oder Respekt für die Geschichte und
@@ -273,6 +330,11 @@
           erinnert an die lange und oft schwierige Geschichte auf dem Weg zu
           Demokratie und nationaler Einheit.
         </p>
+        <div class="card-actions justify-center">
+          <a target="_blank" href="https://de.wikipedia.org/wiki/Flagge_Deutschlands"><button
+              class="btn btn-primary btn-wide">📃 Mehr dazu bei Wikipedia</button></a>
+        </div>
+
       </div>
     </section>
 
@@ -323,10 +385,11 @@
             berücksichtigen, die zu diesem Wohlstand beigetragen haben.
           </li>
         </ul>
-
-        <h3 class="text-xl font-semibold mb-4">
+      </div>
+      <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
+        <h2 class="text-xl font-semibold mb-4">
           Sinnvolle Beispiele, worauf man stolz sein kann 🍀
-        </h3>
+        </h2>
         <p class="mb-4">
           Statt auf eine Flagge oder eine Nation, können Menschen Stolz auf
           folgende Aspekte entwickeln, die auf persönlichen Leistungen und
@@ -363,10 +426,11 @@
             Fähigkeiten und Hobbys sein.
           </li>
         </ul>
-
-        <h3 class="text-xl font-semibold mb-4">
+      </div>
+      <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
+        <h2 class="text-xl font-semibold mb-4">
           Warum unnötiger Stolz auf eine Flagge schädlich sein kann ☠️
-        </h3>
+        </h2>
         <p class="mb-4">
           Übermäßiger Nationalstolz kann zu internationalen Spannungen und
           Konflikten führen. Geschichte und Gegenwart zeigen zahlreiche
