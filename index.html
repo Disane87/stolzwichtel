@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="de" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stolzwichtel - Spaß mit Flaggen</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://statistics.stolzwichtel.de/script.js" data-website-id="33985e6e-bc3e-4ace-8eaf-7eeb32333d0f"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <style type="text/tailwindcss">
-        p, li {
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stolzwichtel - Spaß mit Flaggen</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://statistics.stolzwichtel.de/script.js"
+    data-website-id="33985e6e-bc3e-4ace-8eaf-7eeb32333d0f"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <style type="text/tailwindcss">
+    p, li {
             @apply text-gray-400
         }
 
@@ -24,357 +22,369 @@
           @apply text-gray-200
         }
     </style>
-  </head>
-  <body class="text-gray-900 bg-gray-100 dark:text-gray-100 dark:bg-gray-900">
-    <header
-      class="bg-black text-white p-4 shadow-md flex justify-between items-center dark:bg-black-800"
-    >
-      <div class="avatar">
-        <div class="w-8 rounded-full">
-          <img
-            src="https://images.gutefrage.net/media/fragen/bilder/wann-ist-endlich-wieder-stolzmonat/0_big.png?v=1713572154761"
-          />
-        </div>
-      </div>
+  <!-- Open Graph meta tags -->
+  <meta property="og:title" content="Stolzwichtel - Spaß mit Flaggen">
+  <meta property="og:description"
+    content="Warum die gewählten Farben falsch sind und wie man Flaggen richtig interpretiert.">
+  <meta property="og:image" content="https://stolzwichtel.de/img/og_image.gif">
+  <meta property="og:url" content="https://stolzwichtel.de">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stolzwichtel">
+  <meta property="og:locale" content="de_DE">
 
-      <h1 class="text-2xl font-bold">Stolzwichtel<span class="hidden md:inline"> - es ist wieder soweit 🤷🏼‍♂️<span></h1>
-      <button class="btn btn-white" onclick="sharePage()">📫 Teilen</button>
-    </header>
+  <!-- Twitter meta tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stolzwichtel - Spaß mit Flaggen">
+  <meta name="twitter:description"
+    content="Warum die gewählten Farben falsch sind und wie man Flaggen richtig interpretiert.">
+  <meta name="twitter:image" content="https://stolzwichtel.de/img/og_image.gif">
+</head>
 
-    <div class="container mx-auto p-6">
-      <p class="text-center mb-6">
-        Sieben Versuche gebraucht – aber nicht eine einzige Farbe getroffen...
-      </p>
-
-      <section class="mb-6 items-center flex w-full">
+<body class="text-gray-900 bg-gray-100 dark:text-gray-100 dark:bg-gray-900">
+  <header class="bg-black text-white p-4 shadow-md flex justify-between items-center dark:bg-black-800">
+    <div class="avatar">
+      <div class="w-8 rounded-full">
         <img
-          class="h-72 aspect-video m-auto"
-          src="https://media1.giphy.com/media/XfDPdSRhYFUhIU7EPw/giphy.gif?cid=6c09b952om03mja34lwf2wnm67abdgezzl4l05e6mlu7ge24&ep=v1_gifs_search&rid=giphy.gif&ct=g"
-        />
-      </section>
+          src="https://images.gutefrage.net/media/fragen/bilder/wann-ist-endlich-wieder-stolzmonat/0_big.png?v=1713572154761" />
+      </div>
+    </div>
 
-      <div
-        class="flex flex-col lg:flex-row justify-center mb-6 w-full space-y-6 lg:space-y-0 lg:space-x-6"
-      >
-        <div
-          class="flex flex-col relative w-full lg:w-1/2 card p-4 bg-white shadow-md dark:bg-gray-800 h-80"
-        >
-          <div class="w-full text-center m-3">Falsch ❌</div>
-          <div class="flex-grow tooltip" data-tip="RGB 1/0/0 (#010000)">
-            <div class="w-full h-full" style="background-color: #010000"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 67/14/20 (#430e14)">
-            <div class="w-full h-full" style="background-color: #430e14"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 142/24/25 (#8e1819)">
-            <div class="w-full h-full" style="background-color: #8e1819"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 231/37/43 (#e7252b)">
-            <div class="w-full h-full" style="background-color: #e7252b"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 240/125/47 (#f07d2f)">
-            <div class="w-full h-full" style="background-color: #f07d2f"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 255/201/14 (#ffc90e)">
-            <div class="w-full h-full" style="background-color: #ffc90e"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 250/234/39 (#faea27)">
-            <div class="w-full h-full" style="background-color: #faea27"></div>
-          </div>
+    <h1 class="text-2xl font-bold">Stolzwichtel<span class="hidden md:inline"> - es ist wieder soweit 🤷🏼‍♂️<span></h1>
+    <button class="btn btn-white" onclick="sharePage()">📫 Teilen</button>
+  </header>
+
+  <div class="container mx-auto p-6">
+    <p class="text-center mb-6">
+      Sieben Versuche gebraucht – aber nicht eine einzige Farbe getroffen...
+    </p>
+
+    <section class="mb-6 items-center flex w-full">
+      <img class="h-72 aspect-video m-auto"
+        src="https://media1.giphy.com/media/XfDPdSRhYFUhIU7EPw/giphy.gif?cid=6c09b952om03mja34lwf2wnm67abdgezzl4l05e6mlu7ge24&ep=v1_gifs_search&rid=giphy.gif&ct=g" />
+    </section>
+
+    <div class="flex flex-col lg:flex-row justify-center mb-6 w-full space-y-6 lg:space-y-0 lg:space-x-6">
+      <div class="flex flex-col relative w-full lg:w-1/2 card p-4 bg-white shadow-md dark:bg-gray-800 h-80">
+        <div class="w-full text-center m-3">Falsch ❌</div>
+        <div class="flex-grow tooltip" data-tip="RGB 1/0/0 (#010000)">
+          <div class="w-full h-full" style="background-color: #010000"></div>
         </div>
-        <!-- <div class="divider divider-horizontal hidden lg:block"></div> -->
-        <div
-          class="flex flex-col w-full lg:w-1/2 card p-4 bg-white shadow-md dark:bg-gray-800 h-80"
-        >
-          <div class="w-full text-center m-3">Richtig ✅</div>
-          <div class="flex-grow tooltip" data-tip="RGB 0/0/0 (#000000)">
-            <div class="w-full h-full" style="background-color: #000000"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 255/0/0 (#ff0000)">
-            <div class="w-full h-full" style="background-color: #ff0000"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 255/204/0 (#ffcc00)">
-            <div class="w-full h-full" style="background-color: #ffcc00"></div>
-          </div>
+        <div class="flex-grow tooltip" data-tip="RGB 67/14/20 (#430e14)">
+          <div class="w-full h-full" style="background-color: #430e14"></div>
+        </div>
+        <div class="flex-grow tooltip" data-tip="RGB 142/24/25 (#8e1819)">
+          <div class="w-full h-full" style="background-color: #8e1819"></div>
+        </div>
+        <div class="flex-grow tooltip" data-tip="RGB 231/37/43 (#e7252b)">
+          <div class="w-full h-full" style="background-color: #e7252b"></div>
+        </div>
+        <div class="flex-grow tooltip" data-tip="RGB 240/125/47 (#f07d2f)">
+          <div class="w-full h-full" style="background-color: #f07d2f"></div>
+        </div>
+        <div class="flex-grow tooltip" data-tip="RGB 255/201/14 (#ffc90e)">
+          <div class="w-full h-full" style="background-color: #ffc90e"></div>
+        </div>
+        <div class="flex-grow tooltip" data-tip="RGB 250/234/39 (#faea27)">
+          <div class="w-full h-full" style="background-color: #faea27"></div>
         </div>
       </div>
-      <p class="text-center mb-6">Das muss diese Vaterlandsliebe sein ...</p>
-
-      <section class="mb-6">
-        <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
-          <h2 class="text-2xl font-semibold mb-4">
-            Warum die gewählten Farben falsch sind ❌
-          </h2>
-          <p class="mb-4">
-            Die Farben in der linken Grafik sind inkorrekt und weichen deutlich
-            von den offiziellen Farbtönen der deutschen Flagge ab. Falsche
-            Farbtöne können die Bedeutung und Symbolik verfälschen und zeigen
-            oft ein mangelndes Verständnis oder Respekt für die Geschichte und
-            Kultur. Die offizielle deutsche Flagge besteht aus den Farben
-            Schwarz (#000000), Rot (#FF0000) und Gold (#FFCC00). Diese Farben
-            haben eine tiefe historische Bedeutung und sind mit den
-            demokratischen und republikanischen Bewegungen Deutschlands
-            verbunden. Abweichungen von diesen Farbtönen können verschiedene
-            Probleme verursachen:
-          </p>
-
-          <ul class="list-disc list-inside mb-4 space-y-2">
-            <li>
-              <strong>Verfälschung der Symbolik:</strong> Die Farben
-              Schwarz-Rot-Gold sind eng mit der deutschen Geschichte und den
-              Werten der Demokratie und Freiheit verbunden. Falsche Farbtöne
-              können diese Symbolik verwässern und die Verbindung zu diesen
-              Werten schwächen.
-            </li>
-            <li>
-              <strong>Mangelnder Respekt für die Geschichte:</strong> Die
-              korrekten Farben der Flagge wurden durch historische Ereignisse
-              und Bewegungen geprägt. Änderungen der Farben können als
-              mangelnder Respekt gegenüber der Geschichte und den Kämpfen für
-              Freiheit und Einheit empfunden werden.
-            </li>
-            <li>
-              <strong>Missverständnisse und Verwirrung:</strong> Abweichungen
-              von den offiziellen Farbtönen können zu Missverständnissen führen
-              und die Klarheit der nationalen Symbole beeinträchtigen. Dies kann
-              insbesondere in internationalen Kontexten problematisch sein, wo
-              die korrekte Identifizierung der Flagge wichtig ist.
-            </li>
-            <li>
-              <strong>Symbolische Bedeutung:</strong> Jede Farbe der deutschen
-              Flagge hat eine spezifische symbolische Bedeutung. Schwarz steht
-              für die Entschlossenheit und Standhaftigkeit, Rot für die
-              Leidenschaft und das Opfer, und Gold für die Freiheit und das
-              Wohlstandsstreben. Falsche Farbtöne können diese Bedeutungen
-              verändern oder abschwächen.
-            </li>
-          </ul>
-          <p>
-            Es ist wichtig, die offiziellen Farbtöne zu verwenden, um die
-            historische und kulturelle Integrität der deutschen Flagge zu
-            bewahren und die Werte zu respektieren, die sie repräsentiert.
-          </p>
+      <!-- <div class="divider divider-horizontal hidden lg:block"></div> -->
+      <div class="flex flex-col w-full lg:w-1/2 card p-4 bg-white shadow-md dark:bg-gray-800 h-80">
+        <div class="w-full text-center m-3">Richtig ✅</div>
+        <div class="flex-grow tooltip" data-tip="RGB 0/0/0 (#000000)">
+          <div class="w-full h-full" style="background-color: #000000"></div>
         </div>
-      </section>
-
-      <section class="mb-6">
-        <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
-          <h2 class="text-2xl font-semibold mb-4">
-            Heraldik und Farbsymbolik der deutschen Flagge <img class="inline" src="img/favicon-32x32.png">
-          </h2>
-          <p class="mb-4">
-            Heraldik, die Lehre von den Wappen und ihren Elementen, spielt eine
-            wichtige Rolle bei der Gestaltung von Flaggen. Die Farben und
-            Symbole auf einer Flagge sind nicht zufällig gewählt, sondern haben
-            oft tiefe historische und kulturelle Bedeutungen. Dies trifft auch
-            auf die deutsche Flagge zu, die aus den drei horizontalen Streifen
-            in Schwarz, Rot und Gold besteht.
-          </p>
-
-          <h3 class="text-xl font-semibold mb-4">
-            Die Farben Schwarz-Rot-Gold
-          </h3>
-          <p class="mb-4">
-            Die Farben Schwarz-Rot-Gold haben eine lange Geschichte in
-            Deutschland und sind eng mit der Freiheitsbewegung und den
-            revolutionären Ereignissen des 19. Jahrhunderts verbunden. Sie
-            wurden erstmals während der Befreiungskriege gegen Napoleon
-            verwendet, als die Mitglieder des Lützowschen Freikorps, einer
-            Freiwilligentruppe, schwarze Uniformen mit roten Aufschlägen und
-            goldenen Knöpfen trugen. Diese Farben wurden später zum Symbol für
-            die demokratischen und republikanischen Bestrebungen in Deutschland.
-          </p>
-          <p class="mb-4">
-            Während der Revolution von 1848/49 wurden Schwarz-Rot-Gold als
-            Symbol für die Einheit und Freiheit Deutschlands verwendet. Die
-            Nationalversammlung in der Frankfurter Paulskirche erklärte diese
-            Farben zur offiziellen Nationalflagge. Nach der Niederschlagung der
-            Revolution und der Gründung des Deutschen Kaiserreichs 1871 wurden
-            jedoch die Farben Schwarz-Weiß-Rot zur Nationalflagge des neuen
-            Reiches.
-          </p>
-
-          <h3 class="text-xl font-semibold mb-4">
-            Die Weimarer Republik und das moderne Deutschland
-          </h3>
-          <p class="mb-4">
-            Erst mit der Gründung der Weimarer Republik nach dem Ersten
-            Weltkrieg kehrten die Farben Schwarz-Rot-Gold zurück. Sie standen
-            für die demokratischen Ideale der neuen Republik und sollten die
-            Abkehr vom alten Kaiserreich symbolisieren. Diese Farben blieben
-            jedoch nicht unangefochten, und während der Zeit des
-            Nationalsozialismus wurde die schwarz-weiß-rote Flagge des
-            Kaiserreichs wieder eingeführt.
-          </p>
-          <p class="mb-4">
-            Nach dem Zweiten Weltkrieg und der Gründung der Bundesrepublik
-            Deutschland 1949 wurden Schwarz-Rot-Gold erneut als Nationalfarben
-            bestätigt. Sie stehen heute für die demokratische, föderale und
-            rechtsstaatliche Ordnung des modernen Deutschlands. Die Flagge ist
-            ein Symbol für die Einheit und Freiheit des deutschen Volkes und
-            erinnert an die lange und oft schwierige Geschichte auf dem Weg zu
-            Demokratie und nationaler Einheit.
-          </p>
+        <div class="flex-grow tooltip" data-tip="RGB 255/0/0 (#ff0000)">
+          <div class="w-full h-full" style="background-color: #ff0000"></div>
         </div>
-      </section>
-
-      <section>
-        <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
-          <h2 class="text-2xl font-semibold mb-4">
-            Warum es falsch ist, auf eine Flagge stolz zu sein ☝🏼
-          </h2>
-          <p class="mb-4">
-            Stolz ist ein Gefühl, das sich normalerweise aus persönlichen
-            Leistungen, Errungenschaften oder Beiträgen ergibt. Nationaler
-            Stolz, insbesondere Stolz auf eine Flagge, basiert oft auf der
-            Zugehörigkeit zu einem Land oder einer Nation. Doch wenn man nichts
-            aktiv dazu beigetragen hat, in diesem Land zu leben oder seine Werte
-            und Errungenschaften zu fördern, kann dieser Stolz als unverdient
-            betrachtet werden. Hier sind einige Gründe, warum dies problematisch
-            sein kann:
-          </p>
-          <ul class="list-disc list-inside mb-4 space-y-2">
-            <li>
-              <strong>Unverdiente Anerkennung:</strong> Stolz auf eine Flagge zu
-              sein, ohne etwas dafür getan zu haben, bedeutet, Anerkennung für
-              Leistungen oder Erfolge zu beanspruchen, die man selbst nicht
-              erbracht hat. Dies kann dazu führen, dass man sich
-              fälschlicherweise als über andere erhaben fühlt, nur weil man
-              zufällig in einem bestimmten Land geboren wurde.
-            </li>
-            <li>
-              <strong>Gefährlicher Nationalismus:</strong> Übermäßiger oder
-              unnötiger Stolz auf eine Flagge kann Nationalismus fördern, der
-              oft mit Ausgrenzung und Intoleranz gegenüber anderen Nationen oder
-              ethnischen Gruppen einhergeht. Ein Beispiel ist der extreme
-              Nationalismus in einigen Ländern, der zu Feindseligkeiten und
-              Konflikten führt. Nationalismus kann die Wahrnehmung und
-              Wertschätzung globaler Gemeinschaften und Verbindungen
-              beeinträchtigen. Ein aktuelles Beispiel ist die zunehmende
-              Fremdenfeindlichkeit in vielen Ländern, die zu politischen
-              Spannungen und gesellschaftlicher Spaltung führt.
-            </li>
-            <li>
-              <strong>Mangelnde Anerkennung der eigenen Privilegien:</strong>
-              Stolz auf eine Flagge, ohne die eigenen Privilegien zu erkennen,
-              kann dazu führen, dass man die Herausforderungen und
-              Ungerechtigkeiten, mit denen andere Menschen konfrontiert sind,
-              nicht wahrnimmt. Zum Beispiel kann jemand in einem wohlhabenden
-              Land stolz auf den wirtschaftlichen Erfolg sein, ohne die
-              historische Ausbeutung und die globalen Ungleichheiten zu
-              berücksichtigen, die zu diesem Wohlstand beigetragen haben.
-            </li>
-          </ul>
-
-          <h3 class="text-xl font-semibold mb-4">
-            Sinnvolle Beispiele, worauf man stolz sein kann 🍀
-          </h3>
-          <p class="mb-4">
-            Statt auf eine Flagge oder eine Nation, können Menschen Stolz auf
-            folgende Aspekte entwickeln, die auf persönlichen Leistungen und
-            Beiträgen basieren:
-          </p>
-          <ul class="list-disc list-inside mb-4 space-y-2">
-            <li>
-              <strong>Individuelle Leistungen:</strong> Akademische Erfolge,
-              berufliche Meilensteine oder künstlerische Errungenschaften sind
-              Beispiele für persönliche Leistungen, auf die man stolz sein kann.
-              Diese spiegeln die Anstrengungen, das Talent und das Engagement
-              einer Person wider.
-            </li>
-            <li>
-              <strong>Soziales Engagement:</strong> Freiwilligenarbeit,
-              gemeinnützige Projekte oder der Einsatz für soziale Gerechtigkeit
-              und Umweltbewusstsein sind wertvolle Beiträge zur Gesellschaft,
-              auf die man stolz sein kann. Zum Beispiel kann jemand stolz auf
-              seine Arbeit bei einer lokalen Tafel sein, die Bedürftigen hilft.
-            </li>
-            <li>
-              <strong>Zwischenmenschliche Beziehungen:</strong> Auf starke und
-              unterstützende Beziehungen zu Familie und Freunden stolz zu sein,
-              ist ebenso wichtig. Diese Beziehungen basieren auf gegenseitigem
-              Respekt, Vertrauen und Unterstützung, was oft erhebliches
-              Engagement und emotionale Investition erfordert.
-            </li>
-            <li>
-              <strong>Persönliche Entwicklung:</strong> Stolz auf die
-              Überwindung persönlicher Herausforderungen, das Erreichen von
-              Zielen oder das Wachstum und die Entwicklung als Individuum zu
-              sein, ist ebenfalls bedeutend. Beispiele hierfür können die
-              Bewältigung gesundheitlicher Probleme oder das Erlernen neuer
-              Fähigkeiten und Hobbys sein.
-            </li>
-          </ul>
-
-          <h3 class="text-xl font-semibold mb-4">
-            Warum unnötiger Stolz auf eine Flagge schädlich sein kann ☠️
-          </h3>
-          <p class="mb-4">
-            Übermäßiger Nationalstolz kann zu internationalen Spannungen und
-            Konflikten führen. Geschichte und Gegenwart zeigen zahlreiche
-            Beispiele, wie nationalistische Bewegungen zu Kriegen und Gewalt
-            geführt haben, wie etwa die Konflikte auf dem Balkan in den 1990er
-            Jahren.
-          </p>
-          <ul class="list-disc list-inside mb-4 space-y-2">
-            <li>
-              <strong>Förderung von Konflikten:</strong> Übertriebener
-              Nationalstolz kann zu internationalen Spannungen und Konflikten
-              führen. Geschichte und Gegenwart zeigen zahlreiche Beispiele, wie
-              nationalistische Bewegungen zu Kriegen und Gewalt geführt haben,
-              wie etwa die Konflikte auf dem Balkan in den 1990er Jahren.
-            </li>
-            <li>
-              <strong>Soziale Spaltung:</strong> Nationalstolz kann soziale
-              Spaltung und Diskriminierung innerhalb eines Landes fördern. Ein
-              Beispiel ist die rassistische und fremdenfeindliche Gewalt, die
-              oft durch nationalistische Ideologien motiviert wird.
-            </li>
-            <li>
-              <strong>Verhinderung globaler Zusammenarbeit:</strong> Ein
-              übermäßiger Fokus auf nationale Interessen kann die globale
-              Zusammenarbeit und den Fortschritt behindern. Themen wie
-              Klimawandel, Pandemien und internationale Sicherheit erfordern
-              eine Zusammenarbeit über nationale Grenzen hinweg. Nationalismus
-              kann diese Zusammenarbeit untergraben.
-            </li>
-            <li>
-              <strong>Ignoranz gegenüber eigenen Mängeln:</strong> Übermäßiger
-              Nationalstolz kann dazu führen, dass die eigenen Mängel und
-              Probleme eines Landes übersehen werden. Dies kann Reformen und
-              Fortschritte behindern. Beispielsweise können Menschen, die auf
-              ihre Nation stolz sind, anfälliger für Propaganda sein und die
-              Notwendigkeit von sozialer Gerechtigkeit oder politischen Reformen
-              ignorieren.
-            </li>
-          </ul>
-          <p class="mb-4">
-            Indem man den Stolz auf persönliche Leistungen und Beiträge
-            fokussiert, anstatt auf zufällige Zugehörigkeiten, kann man eine
-            gesündere und inklusivere Gesellschaft fördern.
-          </p>
+        <div class="flex-grow tooltip" data-tip="RGB 255/204/0 (#ffcc00)">
+          <div class="w-full h-full" style="background-color: #ffcc00"></div>
         </div>
-      </section>
+      </div>
     </div>
-    <script>
-      function sharePage() {
-        if (navigator.share) {
-          navigator
-            .share({
-              title: 'Stolzwichtel - Spaß mit Flaggen',
-              text: 'Schau dir diese interessante Seite über die deutsche Flagge und ihre Farben an! #stolzwichtel',
-              url: window.location.href,
-            })
-            .then(() => {
-              console.log('Erfolgreich geteilt');
-            })
-            .catch((error) => {
-              console.error('Fehler beim Teilen', error);
-            });
-        } else {
-          alert('Teilen ist auf diesem Gerät nicht unterstützt.');
-        }
+    <p class="text-center mb-6">Das muss diese Vaterlandsliebe sein ...</p>
+
+    <section class="mb-6">
+      <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
+        <h2 class="text-2xl font-semibold mb-4">
+          Warum die gewählten Farben falsch sind ❌
+        </h2>
+        <p class="mb-4">
+          Die Farben in der linken Grafik sind inkorrekt und weichen deutlich
+          von den offiziellen Farbtönen der deutschen Flagge ab. Falsche
+          Farbtöne können die Bedeutung und Symbolik verfälschen und zeigen
+          oft ein mangelndes Verständnis oder Respekt für die Geschichte und
+          Kultur. Die offizielle deutsche Flagge besteht aus den Farben
+          Schwarz (#000000), Rot (#FF0000) und Gold (#FFCC00). Diese Farben
+          haben eine tiefe historische Bedeutung und sind mit den
+          demokratischen und republikanischen Bewegungen Deutschlands
+          verbunden. Abweichungen von diesen Farbtönen können verschiedene
+          Probleme verursachen:
+        </p>
+
+        <ul class="list-disc list-inside mb-4 space-y-2">
+          <li>
+            <strong>Verfälschung der Symbolik:</strong> Die Farben
+            Schwarz-Rot-Gold sind eng mit der deutschen Geschichte und den
+            Werten der Demokratie und Freiheit verbunden. Falsche Farbtöne
+            können diese Symbolik verwässern und die Verbindung zu diesen
+            Werten schwächen.
+          </li>
+          <li>
+            <strong>Mangelnder Respekt für die Geschichte:</strong> Die
+            korrekten Farben der Flagge wurden durch historische Ereignisse
+            und Bewegungen geprägt. Änderungen der Farben können als
+            mangelnder Respekt gegenüber der Geschichte und den Kämpfen für
+            Freiheit und Einheit empfunden werden.
+          </li>
+          <li>
+            <strong>Missverständnisse und Verwirrung:</strong> Abweichungen
+            von den offiziellen Farbtönen können zu Missverständnissen führen
+            und die Klarheit der nationalen Symbole beeinträchtigen. Dies kann
+            insbesondere in internationalen Kontexten problematisch sein, wo
+            die korrekte Identifizierung der Flagge wichtig ist.
+          </li>
+          <li>
+            <strong>Symbolische Bedeutung:</strong> Jede Farbe der deutschen
+            Flagge hat eine spezifische symbolische Bedeutung. Schwarz steht
+            für die Entschlossenheit und Standhaftigkeit, Rot für die
+            Leidenschaft und das Opfer, und Gold für die Freiheit und das
+            Wohlstandsstreben. Falsche Farbtöne können diese Bedeutungen
+            verändern oder abschwächen.
+          </li>
+        </ul>
+        <p>
+          Es ist wichtig, die offiziellen Farbtöne zu verwenden, um die
+          historische und kulturelle Integrität der deutschen Flagge zu
+          bewahren und die Werte zu respektieren, die sie repräsentiert.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-6">
+      <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
+        <h2 class="text-2xl font-semibold mb-4">
+          Heraldik und Farbsymbolik der deutschen Flagge <img class="inline" src="img/favicon-32x32.png">
+        </h2>
+        <p class="mb-4">
+          Heraldik, die Lehre von den Wappen und ihren Elementen, spielt eine
+          wichtige Rolle bei der Gestaltung von Flaggen. Die Farben und
+          Symbole auf einer Flagge sind nicht zufällig gewählt, sondern haben
+          oft tiefe historische und kulturelle Bedeutungen. Dies trifft auch
+          auf die deutsche Flagge zu, die aus den drei horizontalen Streifen
+          in Schwarz, Rot und Gold besteht.
+        </p>
+
+        <h3 class="text-xl font-semibold mb-4">
+          Die Farben Schwarz-Rot-Gold
+        </h3>
+        <p class="mb-4">
+          Die Farben Schwarz-Rot-Gold haben eine lange Geschichte in
+          Deutschland und sind eng mit der Freiheitsbewegung und den
+          revolutionären Ereignissen des 19. Jahrhunderts verbunden. Sie
+          wurden erstmals während der Befreiungskriege gegen Napoleon
+          verwendet, als die Mitglieder des Lützowschen Freikorps, einer
+          Freiwilligentruppe, schwarze Uniformen mit roten Aufschlägen und
+          goldenen Knöpfen trugen. Diese Farben wurden später zum Symbol für
+          die demokratischen und republikanischen Bestrebungen in Deutschland.
+        </p>
+        <p class="mb-4">
+          Während der Revolution von 1848/49 wurden Schwarz-Rot-Gold als
+          Symbol für die Einheit und Freiheit Deutschlands verwendet. Die
+          Nationalversammlung in der Frankfurter Paulskirche erklärte diese
+          Farben zur offiziellen Nationalflagge. Nach der Niederschlagung der
+          Revolution und der Gründung des Deutschen Kaiserreichs 1871 wurden
+          jedoch die Farben Schwarz-Weiß-Rot zur Nationalflagge des neuen
+          Reiches.
+        </p>
+
+        <h3 class="text-xl font-semibold mb-4">
+          Die Weimarer Republik und das moderne Deutschland
+        </h3>
+        <p class="mb-4">
+          Erst mit der Gründung der Weimarer Republik nach dem Ersten
+          Weltkrieg kehrten die Farben Schwarz-Rot-Gold zurück. Sie standen
+          für die demokratischen Ideale der neuen Republik und sollten die
+          Abkehr vom alten Kaiserreich symbolisieren. Diese Farben blieben
+          jedoch nicht unangefochten, und während der Zeit des
+          Nationalsozialismus wurde die schwarz-weiß-rote Flagge des
+          Kaiserreichs wieder eingeführt.
+        </p>
+        <p class="mb-4">
+          Nach dem Zweiten Weltkrieg und der Gründung der Bundesrepublik
+          Deutschland 1949 wurden Schwarz-Rot-Gold erneut als Nationalfarben
+          bestätigt. Sie stehen heute für die demokratische, föderale und
+          rechtsstaatliche Ordnung des modernen Deutschlands. Die Flagge ist
+          ein Symbol für die Einheit und Freiheit des deutschen Volkes und
+          erinnert an die lange und oft schwierige Geschichte auf dem Weg zu
+          Demokratie und nationaler Einheit.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
+        <h2 class="text-2xl font-semibold mb-4">
+          Warum es falsch ist, auf eine Flagge stolz zu sein ☝🏼
+        </h2>
+        <p class="mb-4">
+          Stolz ist ein Gefühl, das sich normalerweise aus persönlichen
+          Leistungen, Errungenschaften oder Beiträgen ergibt. Nationaler
+          Stolz, insbesondere Stolz auf eine Flagge, basiert oft auf der
+          Zugehörigkeit zu einem Land oder einer Nation. Doch wenn man nichts
+          aktiv dazu beigetragen hat, in diesem Land zu leben oder seine Werte
+          und Errungenschaften zu fördern, kann dieser Stolz als unverdient
+          betrachtet werden. Hier sind einige Gründe, warum dies problematisch
+          sein kann:
+        </p>
+        <ul class="list-disc list-inside mb-4 space-y-2">
+          <li>
+            <strong>Unverdiente Anerkennung:</strong> Stolz auf eine Flagge zu
+            sein, ohne etwas dafür getan zu haben, bedeutet, Anerkennung für
+            Leistungen oder Erfolge zu beanspruchen, die man selbst nicht
+            erbracht hat. Dies kann dazu führen, dass man sich
+            fälschlicherweise als über andere erhaben fühlt, nur weil man
+            zufällig in einem bestimmten Land geboren wurde.
+          </li>
+          <li>
+            <strong>Gefährlicher Nationalismus:</strong> Übermäßiger oder
+            unnötiger Stolz auf eine Flagge kann Nationalismus fördern, der
+            oft mit Ausgrenzung und Intoleranz gegenüber anderen Nationen oder
+            ethnischen Gruppen einhergeht. Ein Beispiel ist der extreme
+            Nationalismus in einigen Ländern, der zu Feindseligkeiten und
+            Konflikten führt. Nationalismus kann die Wahrnehmung und
+            Wertschätzung globaler Gemeinschaften und Verbindungen
+            beeinträchtigen. Ein aktuelles Beispiel ist die zunehmende
+            Fremdenfeindlichkeit in vielen Ländern, die zu politischen
+            Spannungen und gesellschaftlicher Spaltung führt.
+          </li>
+          <li>
+            <strong>Mangelnde Anerkennung der eigenen Privilegien:</strong>
+            Stolz auf eine Flagge, ohne die eigenen Privilegien zu erkennen,
+            kann dazu führen, dass man die Herausforderungen und
+            Ungerechtigkeiten, mit denen andere Menschen konfrontiert sind,
+            nicht wahrnimmt. Zum Beispiel kann jemand in einem wohlhabenden
+            Land stolz auf den wirtschaftlichen Erfolg sein, ohne die
+            historische Ausbeutung und die globalen Ungleichheiten zu
+            berücksichtigen, die zu diesem Wohlstand beigetragen haben.
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mb-4">
+          Sinnvolle Beispiele, worauf man stolz sein kann 🍀
+        </h3>
+        <p class="mb-4">
+          Statt auf eine Flagge oder eine Nation, können Menschen Stolz auf
+          folgende Aspekte entwickeln, die auf persönlichen Leistungen und
+          Beiträgen basieren:
+        </p>
+        <ul class="list-disc list-inside mb-4 space-y-2">
+          <li>
+            <strong>Individuelle Leistungen:</strong> Akademische Erfolge,
+            berufliche Meilensteine oder künstlerische Errungenschaften sind
+            Beispiele für persönliche Leistungen, auf die man stolz sein kann.
+            Diese spiegeln die Anstrengungen, das Talent und das Engagement
+            einer Person wider.
+          </li>
+          <li>
+            <strong>Soziales Engagement:</strong> Freiwilligenarbeit,
+            gemeinnützige Projekte oder der Einsatz für soziale Gerechtigkeit
+            und Umweltbewusstsein sind wertvolle Beiträge zur Gesellschaft,
+            auf die man stolz sein kann. Zum Beispiel kann jemand stolz auf
+            seine Arbeit bei einer lokalen Tafel sein, die Bedürftigen hilft.
+          </li>
+          <li>
+            <strong>Zwischenmenschliche Beziehungen:</strong> Auf starke und
+            unterstützende Beziehungen zu Familie und Freunden stolz zu sein,
+            ist ebenso wichtig. Diese Beziehungen basieren auf gegenseitigem
+            Respekt, Vertrauen und Unterstützung, was oft erhebliches
+            Engagement und emotionale Investition erfordert.
+          </li>
+          <li>
+            <strong>Persönliche Entwicklung:</strong> Stolz auf die
+            Überwindung persönlicher Herausforderungen, das Erreichen von
+            Zielen oder das Wachstum und die Entwicklung als Individuum zu
+            sein, ist ebenfalls bedeutend. Beispiele hierfür können die
+            Bewältigung gesundheitlicher Probleme oder das Erlernen neuer
+            Fähigkeiten und Hobbys sein.
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mb-4">
+          Warum unnötiger Stolz auf eine Flagge schädlich sein kann ☠️
+        </h3>
+        <p class="mb-4">
+          Übermäßiger Nationalstolz kann zu internationalen Spannungen und
+          Konflikten führen. Geschichte und Gegenwart zeigen zahlreiche
+          Beispiele, wie nationalistische Bewegungen zu Kriegen und Gewalt
+          geführt haben, wie etwa die Konflikte auf dem Balkan in den 1990er
+          Jahren.
+        </p>
+        <ul class="list-disc list-inside mb-4 space-y-2">
+          <li>
+            <strong>Förderung von Konflikten:</strong> Übertriebener
+            Nationalstolz kann zu internationalen Spannungen und Konflikten
+            führen. Geschichte und Gegenwart zeigen zahlreiche Beispiele, wie
+            nationalistische Bewegungen zu Kriegen und Gewalt geführt haben,
+            wie etwa die Konflikte auf dem Balkan in den 1990er Jahren.
+          </li>
+          <li>
+            <strong>Soziale Spaltung:</strong> Nationalstolz kann soziale
+            Spaltung und Diskriminierung innerhalb eines Landes fördern. Ein
+            Beispiel ist die rassistische und fremdenfeindliche Gewalt, die
+            oft durch nationalistische Ideologien motiviert wird.
+          </li>
+          <li>
+            <strong>Verhinderung globaler Zusammenarbeit:</strong> Ein
+            übermäßiger Fokus auf nationale Interessen kann die globale
+            Zusammenarbeit und den Fortschritt behindern. Themen wie
+            Klimawandel, Pandemien und internationale Sicherheit erfordern
+            eine Zusammenarbeit über nationale Grenzen hinweg. Nationalismus
+            kann diese Zusammenarbeit untergraben.
+          </li>
+          <li>
+            <strong>Ignoranz gegenüber eigenen Mängeln:</strong> Übermäßiger
+            Nationalstolz kann dazu führen, dass die eigenen Mängel und
+            Probleme eines Landes übersehen werden. Dies kann Reformen und
+            Fortschritte behindern. Beispielsweise können Menschen, die auf
+            ihre Nation stolz sind, anfälliger für Propaganda sein und die
+            Notwendigkeit von sozialer Gerechtigkeit oder politischen Reformen
+            ignorieren.
+          </li>
+        </ul>
+        <p class="mb-4">
+          Indem man den Stolz auf persönliche Leistungen und Beiträge
+          fokussiert, anstatt auf zufällige Zugehörigkeiten, kann man eine
+          gesündere und inklusivere Gesellschaft fördern.
+        </p>
+      </div>
+    </section>
+  </div>
+  <script>
+    function sharePage() {
+      if (navigator.share) {
+        const baseUrl = window.location.href.split('?')[0]; // Basierend auf der aktuellen URL ohne bestehende Query-Parameter
+        const utmParams = '?utm_source=share&utm_medium=social&utm_campaign=stolzwichtel';
+        const shareUrl = baseUrl + utmParams;
+
+        navigator
+          .share({
+            title: 'Stolzwichtel - Spaß mit Flaggen',
+            text: 'Schau dir diese interessante Seite über die deutsche Flagge und ihre Farben an! #stolzwichtel',
+            url: shareUrl,
+          })
+          .then(() => {
+            console.log('Erfolgreich geteilt');
+          })
+          .catch((error) => {
+            console.error('Fehler beim Teilen', error);
+          });
+      } else {
+        alert('Teilen ist auf diesem Gerät nicht unterstützt.');
       }
-    </script>
-  </body>
+    }
+
+  </script>
+</body>
+
 </html>
