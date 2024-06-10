@@ -14,6 +14,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <style type="text/tailwindcss">
+    section {
+      @apply mb-6
+    }
     /* Standard (Light Mode) Styles */
     p, li {
         @apply text-gray-600; /* Darker text for light mode */
@@ -78,7 +81,7 @@
 
     <div class="flex flex-col lg:flex-row justify-center mb-6 w-full space-y-6 lg:space-y-0 lg:space-x-6">
       <div class="flex flex-col relative w-full lg:w-1/2 card p-4 bg-white shadow-md dark:bg-gray-800 h-80">
-        <div class="w-full text-center m-3">Falsch ❌</div>
+        <div class="w-full text-center m-3 font-bold">Falsch ❌</div>
         <div class="flex-grow tooltip" data-tip="RGB 1/0/0 (#010000)">
           <div class="w-full h-full" style="background-color: #010000"></div>
         </div>
@@ -103,7 +106,7 @@
       </div>
       <!-- <div class="divider divider-horizontal hidden lg:block"></div> -->
       <div class="flex flex-col w-full lg:w-1/2 card p-4 bg-white shadow-md dark:bg-gray-800 h-80">
-        <div class="w-full text-center m-3">Richtig ✅</div>
+        <div class="w-full text-center m-3 font-bold">Richtig ✅</div>
         <div class="flex-grow tooltip" data-tip="RGB 0/0/0 (#000000)">
           <div class="w-full h-full" style="background-color: #000000"></div>
         </div>
@@ -117,7 +120,7 @@
     </div>
     <p class="text-center mb-6">Das muss diese Vaterlandsliebe sein ...</p>
 
-    <section class="mb-6">
+    <section>
       <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
         <h2 class="text-2xl font-semibold mb-4">
           Warum die gewählten Farben falsch sind ❌
@@ -174,7 +177,33 @@
       </div>
     </section>
 
-    <section class="mb-6">
+    <section class="flex flex-row gap-4 w-full justify-center">
+      
+      <div class="card bg-base-100 shadow-xl w-96">
+        <figure><img src="https://www.rnd.de/resizer/v2/S6AP5VE2BRAJLI4SP4RE3HMTYM.png?auth=7eb3ed74b0e6a487eaee7af946cc4d21eb15f737f08a74fb86d44e8a44e2b9cd&quality=70&width=596&height=335&smart=true" alt="Shoes" /></figure>
+        <div class="card-body">
+          <h2 class="card-title">„Stolzmonat“ statt Pride Month: Wie Rechte den Kampf für Gleichberechtigung kapern wollen</h2>
+          <p>In den sozialen Medien sind im Juni nicht nur Regenbogen-, sondern auch abgewandelte Deutschland-Flaggen zu sehen. Vor allem rechte Accounts schmücken sich damit. Was steckt dahinter?</p>
+          <div class="card-actions justify-center"> 
+            <a target="_blank" href="https://www.rnd.de/panorama/stolzmonat-wie-rechte-den-pride-month-auf-twitter-und-facebook-kapern-wollen-CZGCPDETXFGAXNE2WCKI4LBDCQ.html"><button class="btn btn-primary btn-wide">Lesen</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card bg-base-100 shadow-xl w-96">
+        <figure><img src="https://www.rnd.de/resizer/v2/MVMZ7G37R5EG7D7CJ5JWPPVJXM.png?auth=2055a0ca062a6dcd274a02c0b3216315b2197432c1c0a117a035fe5a6452ed69&quality=70&width=596&height=335&smart=true" alt="Shoes" /></figure>
+        <div class="card-body">
+          <h2 class="card-title">Posse um den „Stolzmonat“: Wie ein cleverer Aktivist die rechte Szene foppte</h2>
+          <p>Wem gehört der „Pride Month“? Rechte Kreise versuchen seit Langem, den Juni unter dem Begriff „Stolzmonat“ für ihre Zwecke zu instrumentalisieren. Nun hat sich ein queerer Aktivist das Wort europaweit als Marke gesichert. Die Schadenfreude ist groß.</p>
+          <div class="card-actions justify-center">
+            <a target="_blank" href="https://www.rnd.de/politik/rechter-begriff-stolzmonat-queerer-aktivist-meldet-wortmarke-an-644PWBYI3ZHLVMGIIRUII325DI.html"><button class="btn btn-primary btn-wide">Lesen</button></a>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+    <section>
       <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
         <h2 class="text-2xl font-semibold mb-4">
           Heraldik und Farbsymbolik der deutschen Flagge <img class="inline" src="img/favicon-32x32.png">
