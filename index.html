@@ -14,14 +14,27 @@
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <style type="text/tailwindcss">
+    /* Standard (Light Mode) Styles */
     p, li {
-            @apply text-gray-400
+        @apply text-gray-600; /* Darker text for light mode */
+    }
+
+    strong {
+        @apply text-gray-800; /* Slightly darker strong text for light mode */
+    }
+
+    /* Dark Mode Styles */
+    @media (prefers-color-scheme: dark) {
+        p, li {
+            @apply text-gray-400; /* Lighter text for dark mode */
         }
 
         strong {
-          @apply text-gray-200
+            @apply text-gray-200; /* Even lighter strong text for dark mode */
         }
-    </style>
+    }
+</style>
+
   <!-- Open Graph meta tags -->
   <meta property="og:title" content="Stolzwichtel - Spaß mit Flaggen">
   <meta property="og:description"
