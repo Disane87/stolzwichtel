@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,500&family=Space+Mono:wght@400;700&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#0c0a09; --paper-2:#14110d; --card:#16130f;
+    --ink:#f4f1e9; --ink-soft:#c9c1b2; --ink-faint:#837b6d;
+    --rule:#2a251d; --rule-strong:#f4f1e9;
+    --accent:#ff2b2b; --gold:#ffcc00;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{width:1200px;height:630px;}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'Newsreader',Georgia,serif;
+    position:relative; overflow:hidden;
+  }
+  /* grain */
+  body::before{
+    content:""; position:absolute; inset:0; pointer-events:none; z-index:5;
+    opacity:.055; mix-blend-mode:screen;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .font-display{font-family:'Anton',sans-serif;letter-spacing:-0.01em;}
+  .mono{font-family:'Space Mono',monospace;}
+  .ui{font-family:'Archivo',sans-serif;}
+
+  .frame{
+    position:absolute; inset:26px; z-index:2;
+    border:3px solid var(--rule-strong);
+    padding:42px 52px;
+    display:flex; flex-direction:column;
+  }
+  /* corner ticks */
+  .frame::before,.frame::after{
+    content:""; position:absolute; width:14px; height:14px;
+    border:3px solid var(--accent);
+  }
+  .frame::before{top:-3px; left:-3px; border-right:none; border-bottom:none;}
+  .frame::after{bottom:-3px; right:-3px; border-left:none; border-top:none;}
+
+  /* masthead row */
+  .top{display:flex; align-items:center; justify-content:space-between; gap:18px;}
+  .brand{display:flex; align-items:baseline; gap:16px;}
+  .brand .name{font-family:'Anton',sans-serif; font-size:30px; letter-spacing:.02em;}
+  .brand .sub{
+    font-family:'Space Mono',monospace; text-transform:uppercase;
+    letter-spacing:.2em; font-size:11px; color:var(--ink-faint);
+  }
+  .stamp{
+    font-family:'Archivo',sans-serif; font-weight:800; text-transform:uppercase;
+    letter-spacing:.05em; border:3px solid var(--accent); color:var(--accent);
+    padding:7px 15px; transform:rotate(-3deg); border-radius:4px;
+    font-size:15px; line-height:1; white-space:nowrap;
+    display:inline-flex; align-items:center; gap:9px;
+  }
+  .kicker{
+    font-family:'Space Mono',monospace; text-transform:uppercase;
+    letter-spacing:.28em; font-size:13px; font-weight:700; color:var(--accent);
+  }
+
+  .headline{
+    font-family:'Anton',sans-serif; text-transform:uppercase;
+    font-size:118px; line-height:.86; letter-spacing:-0.005em;
+    margin-top:6px;
+  }
+  .headline .red{color:var(--accent);}
+
+  .lede{
+    font-family:'Newsreader',Georgia,serif; font-size:23px; line-height:1.4;
+    color:var(--ink-soft); max-width:760px; margin-top:20px;
+  }
+  .lede strong{color:var(--ink);}
+
+  /* evidence swatches */
+  .evidence{display:flex; align-items:flex-end; gap:36px; margin-top:26px;}
+  .col .cap{
+    font-family:'Space Mono',monospace; text-transform:uppercase;
+    letter-spacing:.16em; font-size:11px; margin-bottom:7px;
+    display:flex; align-items:center; gap:7px;
+  }
+  .swatches{display:flex; gap:5px;}
+  .swatches.wrong > div{width:34px;}
+  .swatches.right > div{width:54px;}
+  .swatches > div{height:54px; border:1px solid rgba(244,241,233,.15);}
+  .vs{
+    font-family:'Anton',sans-serif; font-size:30px; color:var(--ink-faint);
+    padding-bottom:14px;
+  }
+
+  .url{
+    font-family:'Space Mono',monospace; font-weight:700; letter-spacing:.06em;
+    font-size:15px; color:var(--gold);
+  }
+
+  .spacer{flex:1;}
+  .baseline{display:flex; align-items:center; justify-content:space-between; gap:18px;}
+
+  /* gold underline accent under headline */
+  .rule-gold{height:6px; width:200px; background:var(--gold); margin-top:22px;}
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="top">
+      <div class="brand">
+        <span class="name">STOLZWICHTEL</span>
+        <span class="sub">Satirisches&nbsp;Dossier · SRG-7</span>
+      </div>
+      <span class="stamp">● Beweislage: eindeutig</span>
+    </div>
+
+    <div class="spacer" style="flex:0 0 28px;"></div>
+
+    <span class="kicker">Ausgabe Juni · Schwarz · Rot · Gold</span>
+    <h1 class="headline">Sieben Versuche.<br><span class="red">Null Treffer.</span></h1>
+    <div class="rule-gold"></div>
+
+    <p class="lede">
+      Sieben „Patrioten“, sieben Flaggen — und beim Nachmessen der Farben:
+      <strong>keine einzige korrekt.</strong>
+    </p>
+
+    <div class="spacer"></div>
+
+    <div class="evidence">
+      <div class="col">
+        <div class="cap" style="color:var(--accent);"><span>▼</span> Asservat A · 7 Stufen · falsch</div>
+        <div class="swatches wrong">
+          <div style="background:#010000"></div>
+          <div style="background:#430e14"></div>
+          <div style="background:#8e1819"></div>
+          <div style="background:#e7252b"></div>
+          <div style="background:#f07d2f"></div>
+          <div style="background:#ffc90e"></div>
+          <div style="background:#faea27"></div>
+        </div>
+      </div>
+      <div class="vs">vs</div>
+      <div class="col">
+        <div class="cap" style="color:var(--gold);"><span>▼</span> Asservat B · 3 Farben · amtlich</div>
+        <div class="swatches right">
+          <div style="background:#000000"></div>
+          <div style="background:#ff0000"></div>
+          <div style="background:#ffcc00"></div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div style="text-align:right;">
+        <div class="mono" style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:6px;">RAL 9005 · 3020 · 1021</div>
+        <div class="url">stolzwichtel.de</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
