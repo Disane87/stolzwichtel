@@ -1,560 +1,1147 @@
 <!DOCTYPE html>
-<html lang="de" class="dark">
+<html lang="de">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stolzwichtel - Spaß mit Flaggen 🚩</title>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script>document.documentElement.className += ' js';</script>
+  <title>Stolzwichtel · 7 Versuche, 0 Treffer 🚩</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
   <meta name="description"
-    content="Du bist kein Patriot. Nicht mal deine eigene Flagge kennst du richtig! Du bist einfach nur lächerlich! 🤷🏼‍♂️">
+    content="Sieben selbsternannte Patrioten, sieben Flaggen – und keine einzige in den richtigen Farben. Ein satirisches Dossier über Schwarz-Rot-Gold, den „Stolzmonat“ und Leute, die nicht mal ihre eigene Flagge kennen." />
+  <meta name="theme-color" content="#0c0a09" />
+  <meta name="author" content="Stolzwichtel" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="keywords" content="Stolzwichtel, Stolzmonat, deutsche Flagge, Schwarz-Rot-Gold, Flaggenfarben, RAL Farben Flagge, Pride Month, Satire, Demokratie, Bundesflagge" />
+  <link rel="canonical" href="https://stolzwichtel.de/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Stolzwichtel" />
+  <meta property="og:url" content="https://stolzwichtel.de/" />
+  <meta property="og:title" content="Stolzwichtel · 7 Versuche, 0 Treffer" />
+  <meta property="og:description" content="Sieben „Patrioten“, sieben Flaggen, null richtige Farben. Ein satirisches Dossier über Schwarz-Rot-Gold und den „Stolzmonat“." />
+  <meta property="og:image" content="https://stolzwichtel.de/img/og_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Stolzwichtel – Schwarz-Rot-Gold: 7 falsche Farben gegen 3 richtige." />
+  <meta property="og:locale" content="de_DE" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stolzwichtel · 7 Versuche, 0 Treffer" />
+  <meta name="twitter:description" content="Sieben „Patrioten“, sieben Flaggen, null richtige Farben. Ein satirisches Dossier." />
+  <meta name="twitter:image" content="https://stolzwichtel.de/img/og_image.png" />
+  <meta name="twitter:image:alt" content="Stolzwichtel – Schwarz-Rot-Gold: 7 falsche Farben gegen 3 richtige." />
 
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-  <style type="text/tailwindcss">
 
-    section, .card {
-      @apply mb-6
-    }
-    /* Standard (Light Mode) Styles */
-    p, li {
-        @apply text-gray-600; /* Darker text for light mode */
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============ THEME TOKENS ============ */
+    :root {
+      /* Light = warmes Zeitungspapier */
+      --paper: #f4f1e9;
+      --paper-2: #ebe6d8;
+      --card: #fbf9f3;
+      --ink: #14110d;
+      --ink-soft: #4a443b;
+      --ink-faint: #8a8275;
+      --rule: #ddd5c4;
+      --rule-strong: #14110d;
+
+      /* Flaggen-Farben (amtlich) */
+      --flag-black: #000000;
+      --flag-red: #ff0000;
+      --flag-gold: #ffcc00;
+
+      --accent: var(--flag-red);
+      --accent-warm: #d4a017;
+      --grain-opacity: 0.04;
+      --shadow: 18px 18px 0 rgba(20, 17, 13, 0.12);
+      --tip-bg: #14110d;
+      --tip-fg: #f4f1e9;
+      /* Invertierte Feature-Bänder – in BEIDEN Themes dunkel */
+      --band: #14110d;
+      --band-fg: #f4f1e9;
     }
 
-    strong {
-        @apply text-gray-800; /* Slightly darker strong text for light mode */
+    html.dark {
+      --paper: #0c0a09;
+      --paper-2: #14110d;
+      --card: #16130f;
+      --ink: #f4f1e9;
+      --ink-soft: #c9c1b2;
+      --ink-faint: #837b6d;
+      --rule: #2a251d;
+      --rule-strong: #f4f1e9;
+
+      --accent: #ff2b2b;
+      --accent-warm: #ffcc00;
+      --grain-opacity: 0.05;
+      --shadow: 18px 18px 0 rgba(0, 0, 0, 0.5);
+      --tip-bg: #f4f1e9;
+      --tip-fg: #14110d;
+      /* Pures Schwarz hebt das Band vom near-black Seitenhintergrund ab */
+      --band: #000000;
+      --band-fg: #f4f1e9;
     }
 
-    /* Dark Mode Styles */
-    @media (prefers-color-scheme: dark) {
-        p, li {
-            @apply text-gray-400; /* Lighter text for dark mode */
-        }
+    * { box-sizing: border-box; }
 
-        strong {
-            @apply text-gray-200; /* Even lighter strong text for dark mode */
-        }
+    body {
+      margin: 0;
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.6;
+      transition: background-color .4s ease, color .4s ease;
+      overflow-x: hidden;
     }
+
+    /* Papier-Grain Overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: var(--grain-opacity);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+    html.dark body::before { mix-blend-mode: screen; }
+
+    .font-display { font-family: 'Anton', 'Archivo', sans-serif; font-weight: 400; letter-spacing: -0.01em; }
+    .font-ui { font-family: 'Archivo', sans-serif; }
+    .font-mono { font-family: 'Space Mono', monospace; }
+    .serif { font-family: 'Newsreader', Georgia, serif; }
+
+    /* ============ MASTHEAD / KICKER ============ */
+    .kicker {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .label {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.68rem;
+      color: var(--ink-faint);
+    }
+
+    /* ============ RULES & FRAMES ============ */
+    .rule-thick { border-top: 4px solid var(--rule-strong); }
+    .rule-thin { border-top: 1px solid var(--rule); }
+    .double-rule {
+      border-top: 3px solid var(--rule-strong);
+      border-bottom: 1px solid var(--rule-strong);
+      height: 7px;
+    }
+
+    .frame {
+      background: var(--card);
+      border: 2px solid var(--rule-strong);
+      position: relative;
+    }
+    .frame-shadow { box-shadow: var(--shadow); }
+
+    /* ============ FLAG STRIPES ============ */
+    .flag-real {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      border: 2px solid var(--rule-strong);
+      overflow: hidden;
+    }
+    .flag-real > div { width: 100%; }
+
+    .swatch {
+      position: relative;
+      cursor: pointer;
+      transition: transform .25s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
+    }
+    .swatch:hover { transform: translateY(-6px) scale(1.04); z-index: 5; }
+    .swatch::after {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: var(--tip-bg);
+      color: var(--tip-fg);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      padding: 5px 9px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease;
+      z-index: 20;
+    }
+    .swatch:hover::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ============ STAMP ============ */
+    .stamp {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 3px solid var(--accent);
+      color: var(--accent);
+      padding: 6px 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transform: rotate(-4deg);
+      border-radius: 4px;
+      font-size: 0.85rem;
+      line-height: 1;
+    }
+
+    /* ============ CITE BADGE ============ */
+    .cite {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: var(--ink);
+      padding: 2px 6px;
+      border-radius: 3px;
+      text-decoration: none;
+      vertical-align: middle;
+      transition: background .2s ease, transform .15s ease;
+      white-space: nowrap;
+      position: relative;
+      top: -1px;
+    }
+    .cite:hover { background: var(--accent); transform: translateY(-1px); }
+
+    /* ============ TIMELINE ============ */
+    .timeline { position: relative; }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 11px;
+      top: 6px;
+      bottom: 6px;
+      width: 3px;
+      background: var(--rule-strong);
+    }
+    .tl-item { position: relative; padding-left: 48px; }
+    .tl-dot {
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 3px solid var(--accent);
+      z-index: 2;
+    }
+    .tl-dot.gold { border-color: var(--flag-gold); background: var(--flag-gold); }
+
+    /* ============ ANIMATIONS ============ */
+    @keyframes riseIn { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slipIn { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes barGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+    /* Reveal-Inhalte nur verstecken, wenn JS aktiv ist (Progressive Enhancement) */
+    html.js .reveal { opacity: 0; }
+    .reveal.in { animation: riseIn .7s cubic-bezier(.2,.7,.2,1) forwards; }
+    .reveal-1.in { animation-delay: .05s; }
+    .reveal-2.in { animation-delay: .15s; }
+    .reveal-3.in { animation-delay: .25s; }
+    .reveal-4.in { animation-delay: .35s; }
+
+    .hero-line { opacity: 0; animation: riseIn .9s cubic-bezier(.2,.7,.2,1) forwards; }
+    .hero-line.d1 { animation-delay: .1s; }
+    .hero-line.d2 { animation-delay: .25s; }
+    .hero-line.d3 { animation-delay: .4s; }
+    .hero-line.d4 { animation-delay: .55s; }
+    .hero-line.d5 { animation-delay: .7s; }
+
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 90px; }
+
+    /* ============ LINKS ============ */
+    a.tlink {
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 2px;
+      transition: color .2s;
+    }
+    a.tlink:hover { color: var(--accent); }
+
+    /* ============ BUTTONS ============ */
+    .btn {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border: 2px solid var(--rule-strong);
+      background: var(--ink);
+      color: var(--paper);
+      padding: 14px 26px;
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
+      box-shadow: 5px 5px 0 var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .btn:hover { transform: translate(-2px,-2px); box-shadow: 8px 8px 0 var(--accent); }
+    .btn:active { transform: translate(2px,2px); box-shadow: 2px 2px 0 var(--accent); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      box-shadow: 5px 5px 0 var(--rule-strong);
+    }
+    .btn-ghost:hover { box-shadow: 8px 8px 0 var(--rule-strong); }
+
+    /* ============ THEME TOGGLE ============ */
+    .theme-toggle {
+      position: relative;
+      width: 58px; height: 30px;
+      background: var(--ink);
+      border: 2px solid var(--rule-strong);
+      cursor: pointer;
+      border-radius: 30px;
+      transition: background .3s;
+      flex-shrink: 0;
+    }
+    .theme-toggle::before {
+      content: "🌙";
+      position: absolute;
+      top: 50%; left: 3px;
+      transform: translateY(-50%);
+      width: 22px; height: 22px;
+      background: var(--paper);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 12px;
+      transition: left .3s cubic-bezier(.4,0,.2,1), content .3s;
+    }
+    html.dark .theme-toggle::before { content: "☀️"; left: 29px; }
+
+    /* ============ INVERTED FEATURE BANDS ============ */
+    .band {
+      background: var(--band);
+      color: var(--band-fg);
+      border-top: 3px solid var(--rule-strong);
+      border-bottom: 3px solid var(--rule-strong);
+    }
+
+    /* ============ MARQUEE ============ */
+    .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      background: var(--band);
+      color: var(--band-fg);
+      border-top: 3px solid var(--rule-strong);
+      border-bottom: 3px solid var(--rule-strong);
+    }
+    .marquee-track {
+      display: inline-block;
+      padding: 12px 0;
+      animation: scrollX 30s linear infinite;
+      font-family: 'Archivo', sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.95rem;
+    }
+    .marquee-track span { margin: 0 28px; }
+    .marquee-track .gold { color: var(--flag-gold); }
+    @keyframes scrollX { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .001s !important; animation-delay: 0s !important; transition: none !important; }
+      .reveal { opacity: 1 !important; }
+    }
+
+    /* fluid display */
+    .display-xl { font-size: clamp(3rem, 12vw, 9.5rem); line-height: 0.92; }
+    .display-lg { font-size: clamp(2.2rem, 7vw, 5rem); line-height: 0.95; }
+    .display-md { font-size: clamp(1.8rem, 4.5vw, 3.2rem); line-height: 1; }
+
+    ::selection { background: var(--flag-gold); color: #14110d; }
   </style>
 
-  <!-- Open Graph meta tags -->
-  <meta property="og:title" content="Stolzwichtel - Spaß mit Flaggen 🚩">
-  <meta property="og:description"
-    content="Du bist kein Patriot. Nicht mal deine eigene Flagge kennst du richtig! Du bist einfach nur lächerlich! 🤷🏼‍♂️">
-  <meta property="og:image" content="https://stolzwichtel.de/img/og_image.png">
-  <meta property="og:url" content="https://stolzwichtel.de">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Stolzwichtel">
-  <meta property="og:locale" content="de_DE">
-
-  <!-- Twitter meta tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Stolzwichtel - Spaß mit Flaggen">
-  <meta name="twitter:description"
-    content="Du bist kein Patriot. Nicht mal deine eigene Flagge kennst du richtig! Du bist einfach nur lächerlich! 🤷🏼‍♂️">
-  <meta name="twitter:image" content="https://stolzwichtel.de/img/og_image.png">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://stolzwichtel.de/#website",
+        "url": "https://stolzwichtel.de/",
+        "name": "Stolzwichtel",
+        "description": "Satirisches Dossier über Schwarz-Rot-Gold, den „Stolzmonat“ und Leute, die nicht mal ihre eigene Flagge kennen.",
+        "inLanguage": "de-DE"
+      },
+      {
+        "@type": "Article",
+        "@id": "https://stolzwichtel.de/#article",
+        "isPartOf": { "@id": "https://stolzwichtel.de/#website" },
+        "headline": "Sieben Versuche. Null Treffer.",
+        "description": "Sieben selbsternannte Patrioten, sieben Flaggen – keine einzige in den richtigen Farben. Ein satirisches, quellenbelegtes Dossier über die offiziellen Farben der deutschen Flagge und die rechtsextreme „Stolzmonat“-Kampagne.",
+        "image": "https://stolzwichtel.de/img/og_image.png",
+        "inLanguage": "de-DE",
+        "genre": "Satire",
+        "keywords": "Stolzmonat, deutsche Flagge, Schwarz-Rot-Gold, Flaggenfarben, Pride Month, Demokratie",
+        "about": [
+          { "@type": "Thing", "name": "Flagge Deutschlands", "sameAs": "https://de.wikipedia.org/wiki/Flagge_Deutschlands" },
+          { "@type": "Thing", "name": "Schwarz-Rot-Gold", "sameAs": "https://de.wikipedia.org/wiki/Schwarz-Rot-Gold" }
+        ],
+        "citation": [
+          "https://de.wikipedia.org/wiki/Flagge_Deutschlands",
+          "https://de.wikipedia.org/wiki/Schwarz-Rot-Gold",
+          "https://de.wikipedia.org/wiki/Schwarz-Wei%C3%9F-Rot",
+          "https://www.amadeu-antonio-stiftung.de/rechtsextreme-kampagne-gegen-den-pride-month-der-stolzmonat-114483/",
+          "https://www.mimikama.org/stolzmonat-als-rechte-hetzkampagne-gegen-lgbtqia/",
+          "https://www.gesetze-im-internet.de/gg/art_22.html",
+          "https://www.bundespraesident.de/SharedDocs/Reden/DE/Johannes-Rau/Reden/2001/03/20010319_Rede.html",
+          "https://de.wikiquote.org/wiki/Gustav_Heinemann",
+          "https://www.bpb.de/shop/zeitschriften/apuz/archiv/536463/verfassungspatriotismus-als-identitaetskonzept-der-nation/"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://stolzwichtel.de/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Welche Farben hat die deutsche Flagge offiziell?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Schwarz (RAL 9005, #000000), Rot (RAL 3020, #FF0000) und Gold (RAL 1021, #FFCC00). Das Seitenverhältnis beträgt 3:5, festgelegt im Corporate Design der Bundesregierung von 1999."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was ist der „Stolzmonat“?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Eine seit 2023 aus rechtsextremen Online-Kreisen betriebene Kampagne, die als Gegenentwurf zum Pride Month inszeniert wird und queere Menschen verhöhnt. Ihr Logo ist eine schwarz-rot-goldene Verlaufsfahne in sieben Abstufungen."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
-<body class="text-gray-900 bg-gray-100 dark:text-gray-100 dark:bg-gray-900">
-  <header
-    class="bg-black text-white p-4 shadow-md flex justify-between items-center dark:bg-black-800 sticky top-0 z-10">
-    <div class="avatar">
-      <div class="w-8 rounded-full">
-        <img src="img/stolz_monat.png" />
+<body class="dark antialiased">
+
+  <!-- ============ HEADER / MASTHEAD ============ -->
+  <header class="sticky top-0 z-50" style="background: var(--paper); border-bottom: 3px solid var(--rule-strong);">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4 px-5 py-3">
+      <a href="#top" class="flex items-center gap-3 no-underline" style="color: var(--ink);">
+        <img src="img/stolz_monat.png" class="h-10 w-10 object-cover" style="border:2px solid var(--rule-strong);" alt="Stolzwichtel Logo">
+        <div class="leading-none">
+          <div class="font-display text-2xl tracking-tight" style="color: var(--ink);">STOLZWICHTEL</div>
+          <div class="label mt-1">Satirisches Dossier · Schwarz·Rot·Gold</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-3">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Hell/Dunkel umschalten"></button>
+        <button class="btn !px-4 !py-2 text-sm" onclick="sharePage()">
+          <span>↗</span><span class="hidden sm:inline">Teilen</span>
+        </button>
       </div>
     </div>
-
-    <h1 class="text-2xl font-bold">Stolzwichtel<span class="hidden md:inline"> - es ist wieder soweit 🤷🏼‍♂️<span></h1>
-    <button class="btn btn-white animate__animated animate__pulse animate__infinite" onclick="sharePage()">📫
-      Teilen</button>
   </header>
 
-  <div class="container mx-auto p-6 z-20">
-    <p class="text-center mb-6">
-      Sieben Versuche gebraucht – aber nicht eine einzige Farbe getroffen...
-    </p>
+  <span id="top"></span>
 
-    <section class="mb-6 item-center flex flex-col sm:flex-row w-full m-4 gap-6">
-      <div class="info w-full md:w-50">
-        <h1 class="text-2xl font-semibold mb-4">
-          Sie sind wieder da 😐
-        </h1>
-        <div class="w-full">
-          Es ist wieder soweit, die Rechten versuchen sich wieder als Patrioten zu inszenieren und scheitern kläglich.
-          Dieses Mal mit einer abgewandelten Deutschland-Flagge, die sie als "Stolzmonat"-Flagge bezeichnen. Doch wie so
-          oft, haben sie nicht einmal die Farben der deutschen Flagge richtig getroffen. Aber keine Sorge, wir helfen
-          gerne nach und erklären, warum es wichtig ist, die Farben der Flagge zu kennen und warum es falsch ist, nur
-          auf
-          eine Flagge stolz zu sein.
+  <!-- ============ HERO ============ -->
+  <section class="relative z-10 px-5 pt-10 pb-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="hero-line d1 flex flex-wrap items-center gap-4 mb-6">
+        <span class="kicker">Ausgabe Juni · Aktenzeichen SRG-7</span>
+        <span class="hidden sm:block flex-1 double-rule"></span>
+        <span class="stamp">● Beweislage: eindeutig</span>
+      </div>
 
-          <p class="mt-4">
-            <strong>Stolzwichtel</strong> ist ein Spaßprojekt, das die Farben der deutschen Flagge und die Bedeutung von
-            Nationalstolz humorvoll auf die Schippe nimmt. Wir möchten auf unterhaltsame Weise zeigen, wie leicht es
-            ist,
-            die Farben einer Flagge zu verwechseln und warum es wichtiger ist, auf persönliche Leistungen und Beiträge
-            stolz zu sein. Wir hoffen, dass du beim Lesen und Lernen über die deutsche Flagge und ihre Farben genauso
-            viel
+      <h1 class="font-display display-xl uppercase">
+        <span class="hero-line d2 block">Sieben Versuche.</span>
+        <span class="hero-line d3 block" style="color: var(--accent);">Null Treffer.</span>
+      </h1>
+
+      <p class="hero-line d4 serif mt-7 max-w-2xl text-2xl" style="color: var(--ink-soft);">
+        Sieben selbsternannte „Patrioten“ posieren mit ihrer Flagge fürs Gruppenfoto.
+        Sieben Mal Schwarz-Rot-Gold. Und beim Nachmessen der Farben:
+        <strong style="color: var(--ink);">keine einzige korrekt.</strong>
+        Willkommen im Dossier über Menschen, die nicht mal ihre eigene Fahne kennen. 🤷🏼‍♂️
+      </p>
+
+      <div class="hero-line d5 mt-9 flex flex-wrap gap-4">
+        <a href="#beweis" class="btn">🔍 Zur Beweisaufnahme</a>
+        <a href="#stolzmonat" class="btn btn-ghost">Was ist „Stolzmonat“?</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Flag Evidence Strip -->
+  <section class="relative z-10 px-5 pt-10 pb-14">
+    <div class="max-w-6xl mx-auto grid gap-6 md:grid-cols-2 items-end reveal reveal-1">
+      <figure class="m-0">
+        <figcaption class="label mb-2 flex items-center gap-2"><span style="color:var(--accent)">▼</span> Asservat A · „Flagge“ der Stolzwichtel · 7 Stufen</figcaption>
+        <div class="grid grid-cols-7 gap-1.5">
+          <div class="swatch h-24" style="background:#010000" data-tip="#010000"></div>
+          <div class="swatch h-24" style="background:#430e14" data-tip="#430e14"></div>
+          <div class="swatch h-24" style="background:#8e1819" data-tip="#8e1819"></div>
+          <div class="swatch h-24" style="background:#e7252b" data-tip="#e7252b"></div>
+          <div class="swatch h-24" style="background:#f07d2f" data-tip="#f07d2f"></div>
+          <div class="swatch h-24" style="background:#ffc90e" data-tip="#ffc90e"></div>
+          <div class="swatch h-24" style="background:#faea27" data-tip="#faea27"></div>
         </div>
-      </div>
-
-      <div class="mb-4 w-full">
-        <h1 class="text-2xl font-semibold mb-4">
-          Die Farben der Flagge 🤯
-        </h1>
-
-        <iframe class="aspect-video w-full h-full p-0 m-0"
-          src="https://www.youtube.com/embed/ooEeNzzKxfk?si=3JKnnZ_XAgBOW7JJ?autoplay=1" title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-        </iframe>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">
-        Was ist richtig und was ist falsch? 🤔
-      </h2>
-      <div class="flex flex-col lg:flex-row justify-center mb-6 w-full space-y-6 lg:space-y-0 lg:space-x-6">
-        <div class="flex flex-col relative w-full lg:w-1/2 card p-4 bg-white shadow-md dark:bg-gray-800 h-80">
-          <div class="w-full text-center m-3 font-bold">Falsch ❌</div>
-          <div class="flex-grow tooltip" data-tip="RGB 1/0/0 (#010000)">
-            <div class="w-full h-full" style="background-color: #010000"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 67/14/20 (#430e14)">
-            <div class="w-full h-full" style="background-color: #430e14"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 142/24/25 (#8e1819)">
-            <div class="w-full h-full" style="background-color: #8e1819"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 231/37/43 (#e7252b)">
-            <div class="w-full h-full" style="background-color: #e7252b"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 240/125/47 (#f07d2f)">
-            <div class="w-full h-full" style="background-color: #f07d2f"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 255/201/14 (#ffc90e)">
-            <div class="w-full h-full" style="background-color: #ffc90e"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 250/234/39 (#faea27)">
-            <div class="w-full h-full" style="background-color: #faea27"></div>
-          </div>
+      </figure>
+      <figure class="m-0">
+        <figcaption class="label mb-2 flex items-center gap-2"><span style="color:var(--flag-gold)">▼</span> Asservat B · Bundesflagge · 3 Farben, amtlich</figcaption>
+        <div class="grid grid-cols-3 gap-1.5">
+          <div class="swatch h-24" style="background:#000000" data-tip="Schwarz · #000000"></div>
+          <div class="swatch h-24" style="background:#ff0000" data-tip="Rot · #FF0000"></div>
+          <div class="swatch h-24" style="background:#ffcc00" data-tip="Gold · #FFCC00"></div>
         </div>
-        <!-- <div class="divider divider-horizontal hidden lg:block"></div> -->
-        <div class="flex flex-col w-full lg:w-1/2 card p-4 bg-white shadow-md dark:bg-gray-800 h-80">
-          <div class="w-full text-center m-3 font-bold">Richtig ✅</div>
-          <div class="flex-grow tooltip" data-tip="RGB 0/0/0 (#000000)">
-            <div class="w-full h-full" style="background-color: #000000"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 255/0/0 (#ff0000)">
-            <div class="w-full h-full" style="background-color: #ff0000"></div>
-          </div>
-          <div class="flex-grow tooltip" data-tip="RGB 255/204/0 (#ffcc00)">
-            <div class="w-full h-full" style="background-color: #ffcc00"></div>
-          </div>
-        </div>
-      </div>
-      <p class="text-center mb-6">Da hört dann auch schon die Vaterlandsliebe auf...</p>
-    </section>
+      </figure>
+    </div>
+  </section>
 
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">
-        "Stolzmonat"-Farben falsch ❌
-      </h2>
-      <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
-
-        <p>
-          Auf der Grundlage des Beschlusses des Bundeskabinetts vom 2. Juni 1999 wurde das Corporate-Design der
-          Bundesregierung entwickelt.
-          Für Abbildungen der Flagge in Druckerzeugnissen und auf Bildschirmen verwendet die Bundesregierung demnach
-          folgende RAL-Farbwerte, mit deren Entsprechung im Pantone- und CMYK-System für Wort-Bild-Marken
-          („Firmenlogos“) und RGB für Online-Medien:
-        </p>
-
-        <table
-          class="w-full md:w-6/12 border border-gray-600 dark:bg-gray-600 border-collapse text-left my-6 self-center">
-          <thead>
-            <tr class="text-center dark:bg-gray-600">
-              <th class="p-2 w-2/12">Farbe</th>
-              <th class="w-40 p-2 hidden md:table-cell">RAL (Stoff)</th>
-              <th class="w-40 p-2 hidden md:table-cell">RAL (Druck)</th>
-              <th class="w-40 p-2 hidden md:table-cell">Pantone</th>
-              <th class="w-40 p-2 hidden md:table-cell">CMYK</th>
-              <th class="w-40 p-2">RGB (Hex)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="text-center p-2">Schwarz</td>
-              <td class="bg-[#2a292a] text-white text-center p-2 hidden md:table-cell" title="0A0A0D">
-                9017<br>Verkehrsschwarz<br>2A 29 2A
-              </td>
-              <td class="bg-[#0a0a0d] text-white text-center p-2 hidden md:table-cell" title="0A0A0D">
-                9005<br>Tiefschwarz<br>0A 0A 0D</td>
-              <td class="bg-[#17191a] text-white text-center p-2 hidden md:table-cell" title="17191A">Black</td>
-              <td class="bg-[#000000] text-white text-center p-2 hidden md:table-cell" title="000">0-0-0-100</td>
-              <td class="bg-[#000000] text-white text-center p-2" title="000">0,0,0<br>(#000000)</td>
-            </tr>
-            <tr>
-              <td class="text-center p-2">Rot</td>
-              <td class="bg-[#c1121c] text-white text-center p-2 hidden md:table-cell" title="C1121C">
-                3020<br>Verkehrsrot<br>C1 12 1C</td>
-              <td class="bg-[#c1121c] text-white text-center p-2 hidden md:table-cell" title="C1121C">
-                3020<br>Verkehrsrot<br>C1 12 1C</td>
-              <td class="bg-[#c12d28] text-white text-center p-2 hidden md:table-cell" title="C11D28">485</td>
-              <td class="bg-[#ff0000] text-white text-center p-2 hidden md:table-cell" title="F00">0-100-100-0</td>
-              <td class="bg-[#ff0000] text-white text-center p-2" title="F00">255,0,0<br>(#FF0000)</td>
-            </tr>
-            <tr>
-              <td class="text-center p-2">Gold</td>
-              <td class="bg-[#ff9b00] text-center p-2 hidden md:table-cell" title="EEC900">1028<br>Melonengelb<br>FF 9B
-                00
-              </td>
-              <td class="bg-[#eec900] text-center p-2 hidden md:table-cell" title="EEC900">1021<br>Rapsgelb<br>EE C9 00
-              </td>
-              <td class="bg-[#ffbd00] text-center p-2 hidden md:table-cell" title="FFBD00">Yellow: 765 g,<br>Red 032: 26
-                g,<br>Black: 11
-                g,<br>transp. White: 198 g,<br>Alternativ 7405</td>
-              <td class="bg-[#edd100] text-center p-2 hidden md:table-cell" title="EDD100">0-12-100-5</td>
-              <td class="bg-[#ffcc00] text-center p-2" title="FC0">255,204,0<br>(#FFCC00)</td>
-            </tr>
-          </tbody>
-        </table>
-
-
-
-        <p class="mb-4">
-          Die Farben in der "Stolzmonat"-Bilder sind daher inkorrekt und weichen deutlich
-          von den offiziellen Farbtönen der deutschen Flagge ab. Falsche
-          Farbtöne können die Bedeutung und Symbolik verfälschen und zeigen
-          oft ein mangelndes Verständnis oder Respekt für die Geschichte und
-          Kultur. Die offizielle deutsche Flagge besteht aus den Farben
-          Schwarz (#000000), Rot (#FF0000) und Gold (#FFCC00). Diese Farben
-          haben eine tiefe historische Bedeutung und sind mit den
-          demokratischen und republikanischen Bewegungen Deutschlands
-          verbunden. Abweichungen von diesen Farbtönen können verschiedene
-          Probleme verursachen:
-        </p>
-
-        <ul class="list-disc list-inside mb-4 space-y-2">
-          <li>
-            <strong>Verfälschung der Symbolik:</strong> Die Farben
-            Schwarz-Rot-Gold sind eng mit der deutschen Geschichte und den
-            Werten der Demokratie und Freiheit verbunden. Falsche Farbtöne
-            können diese Symbolik verwässern und die Verbindung zu diesen
-            Werten schwächen.
-          </li>
-          <li>
-            <strong>Mangelnder Respekt für die Geschichte:</strong> Die
-            korrekten Farben der Flagge wurden durch historische Ereignisse
-            und Bewegungen geprägt. Änderungen der Farben können als
-            mangelnder Respekt gegenüber der Geschichte und den Kämpfen für
-            Freiheit und Einheit empfunden werden.
-          </li>
-          <li>
-            <strong>Missverständnisse und Verwirrung:</strong> Abweichungen
-            von den offiziellen Farbtönen können zu Missverständnissen führen
-            und die Klarheit der nationalen Symbole beeinträchtigen. Dies kann
-            insbesondere in internationalen Kontexten problematisch sein, wo
-            die korrekte Identifizierung der Flagge wichtig ist.
-          </li>
-          <li>
-            <strong>Symbolische Bedeutung:</strong> Jede Farbe der deutschen
-            Flagge hat eine spezifische symbolische Bedeutung. Schwarz steht
-            für die Entschlossenheit und Standhaftigkeit, Rot für die
-            Leidenschaft und das Opfer, und Gold für die Freiheit und das
-            Wohlstandsstreben. Falsche Farbtöne können diese Bedeutungen
-            verändern oder abschwächen.
-          </li>
-        </ul>
-        <p>
-          Es ist wichtig, die offiziellen Farbtöne zu verwenden, um die
-          historische und kulturelle Integrität der deutschen Flagge zu
-          bewahren und die Werte zu respektieren, die sie repräsentiert.
-        </p>
-      </div>
-    </section>
-
-    <section class="flex flex-col md:flex-row gap-4 w-full justify-center">
-
-      <div class="card bg-base-100 shadow-xl md:w-96">
-        <figure><img
-            src="https://www.rnd.de/resizer/v2/S6AP5VE2BRAJLI4SP4RE3HMTYM.png?auth=7eb3ed74b0e6a487eaee7af946cc4d21eb15f737f08a74fb86d44e8a44e2b9cd&quality=70&width=596&height=335&smart=true"
-            alt="Shoes" /></figure>
-        <div class="card-body">
-          <h2 class="card-title">„Stolzmonat“ statt Pride Month: Wie Rechte den Kampf für Gleichberechtigung kapern
-            wollen</h2>
-          <p>In den sozialen Medien sind im Juni nicht nur Regenbogen-, sondern auch abgewandelte Deutschland-Flaggen zu
-            sehen. Vor allem rechte Accounts schmücken sich damit. Was steckt dahinter?</p>
-          <div class="card-actions justify-center">
-            <a target="_blank"
-              href="https://www.rnd.de/panorama/stolzmonat-wie-rechte-den-pride-month-auf-twitter-und-facebook-kapern-wollen-CZGCPDETXFGAXNE2WCKI4LBDCQ.html"><button
-                class="btn btn-primary btn-wide">Lesen</button></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card bg-base-100 shadow-xl md:w-96">
-        <figure><img
-            src="https://www.rnd.de/resizer/v2/MVMZ7G37R5EG7D7CJ5JWPPVJXM.png?auth=2055a0ca062a6dcd274a02c0b3216315b2197432c1c0a117a035fe5a6452ed69&quality=70&width=596&height=335&smart=true"
-            alt="Shoes" /></figure>
-        <div class="card-body">
-          <h2 class="card-title">Posse um den „Stolzmonat“: Wie ein cleverer Aktivist die rechte Szene foppte</h2>
-          <p>Wem gehört der „Pride Month“? Rechte Kreise versuchen seit Langem, den Juni unter dem Begriff „Stolzmonat“
-            für ihre Zwecke zu instrumentalisieren. Nun hat sich ein queerer Aktivist das Wort europaweit als Marke
-            gesichert. Die Schadenfreude ist groß.</p>
-          <div class="card-actions justify-center">
-            <a target="_blank"
-              href="https://www.rnd.de/politik/rechter-begriff-stolzmonat-queerer-aktivist-meldet-wortmarke-an-644PWBYI3ZHLVMGIIRUII325DI.html"><button
-                class="btn btn-primary btn-wide">Lesen</button></a>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">
-        Heraldik und Farbsymbolik der deutschen Flagge <img class="inline" src="img/favicon-32x32.png">
-      </h2>
-      <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
-
-        <p class="mb-4">
-          Heraldik, die Lehre von den Wappen und ihren Elementen, spielt eine
-          wichtige Rolle bei der Gestaltung von Flaggen. Die Farben und
-          Symbole auf einer Flagge sind nicht zufällig gewählt, sondern haben
-          oft tiefe historische und kulturelle Bedeutungen. Dies trifft auch
-          auf die deutsche Flagge zu, die aus den drei horizontalen Streifen
-          in Schwarz, Rot und Gold besteht.
-        </p>
-
-        <h3 class="text-xl font-semibold mb-4">
-          Die Farben Schwarz-Rot-Gold
-        </h3>
-        <p class="mb-4">
-          Die Farben Schwarz-Rot-Gold haben eine lange Geschichte in
-          Deutschland und sind eng mit der Freiheitsbewegung und den
-          revolutionären Ereignissen des 19. Jahrhunderts verbunden. Sie
-          wurden erstmals während der Befreiungskriege gegen Napoleon
-          verwendet, als die Mitglieder des Lützowschen Freikorps, einer
-          Freiwilligentruppe, schwarze Uniformen mit roten Aufschlägen und
-          goldenen Knöpfen trugen. Diese Farben wurden später zum Symbol für
-          die demokratischen und republikanischen Bestrebungen in Deutschland.
-        </p>
-        <p class="mb-4">
-          Während der Revolution von 1848/49 wurden Schwarz-Rot-Gold als
-          Symbol für die Einheit und Freiheit Deutschlands verwendet. Die
-          Nationalversammlung in der Frankfurter Paulskirche erklärte diese
-          Farben zur offiziellen Nationalflagge. Nach der Niederschlagung der
-          Revolution und der Gründung des Deutschen Kaiserreichs 1871 wurden
-          jedoch die Farben Schwarz-Weiß-Rot zur Nationalflagge des neuen
-          Reiches.
-        </p>
-
-        <h3 class="text-xl font-semibold mb-4">
-          Die Weimarer Republik und das moderne Deutschland
-        </h3>
-        <p class="mb-4">
-          Erst mit der Gründung der Weimarer Republik nach dem Ersten
-          Weltkrieg kehrten die Farben Schwarz-Rot-Gold zurück. Sie standen
-          für die demokratischen Ideale der neuen Republik und sollten die
-          Abkehr vom alten Kaiserreich symbolisieren. Diese Farben blieben
-          jedoch nicht unangefochten, und während der Zeit des
-          Nationalsozialismus wurde die schwarz-weiß-rote Flagge des
-          Kaiserreichs wieder eingeführt.
-        </p>
-        <p class="mb-4">
-          Nach dem Zweiten Weltkrieg und der Gründung der Bundesrepublik
-          Deutschland 1949 wurden Schwarz-Rot-Gold erneut als Nationalfarben
-          bestätigt. Sie stehen heute für die demokratische, föderale und
-          rechtsstaatliche Ordnung des modernen Deutschlands. Die Flagge ist
-          ein Symbol für die Einheit und Freiheit des deutschen Volkes und
-          erinnert an die lange und oft schwierige Geschichte auf dem Weg zu
-          Demokratie und nationaler Einheit.
-        </p>
-        <div class="card-actions justify-center">
-          <a target="_blank" href="https://de.wikipedia.org/wiki/Flagge_Deutschlands"><button
-              class="btn btn-primary btn-wide">📃 Mehr dazu bei Wikipedia</button></a>
-        </div>
-
-      </div>
-    </section>
-
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">
-        Warum es falsch ist, auf eine Flagge stolz zu sein ☝🏼
-      </h2>
-      <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
-
-        <p class="mb-4">
-          Stolz ist ein Gefühl, das sich normalerweise aus persönlichen
-          Leistungen, Errungenschaften oder Beiträgen ergibt. Nationaler
-          Stolz, insbesondere Stolz auf eine Flagge, basiert oft auf der
-          Zugehörigkeit zu einem Land oder einer Nation. Doch wenn man nichts
-          aktiv dazu beigetragen hat, in diesem Land zu leben oder seine Werte
-          und Errungenschaften zu fördern, kann dieser Stolz als unverdient
-          betrachtet werden. Hier sind einige Gründe, warum dies problematisch
-          sein kann:
-        </p>
-        <ul class="list-disc list-inside mb-4 space-y-2">
-          <li>
-            <strong>Unverdiente Anerkennung:</strong> Stolz auf eine Flagge zu
-            sein, ohne etwas dafür getan zu haben, bedeutet, Anerkennung für
-            Leistungen oder Erfolge zu beanspruchen, die man selbst nicht
-            erbracht hat. Dies kann dazu führen, dass man sich
-            fälschlicherweise als über andere erhaben fühlt, nur weil man
-            zufällig in einem bestimmten Land geboren wurde.
-          </li>
-          <li>
-            <strong>Gefährlicher Nationalismus:</strong> Übermäßiger oder
-            unnötiger Stolz auf eine Flagge kann Nationalismus fördern, der
-            oft mit Ausgrenzung und Intoleranz gegenüber anderen Nationen oder
-            ethnischen Gruppen einhergeht. Ein Beispiel ist der extreme
-            Nationalismus in einigen Ländern, der zu Feindseligkeiten und
-            Konflikten führt. Nationalismus kann die Wahrnehmung und
-            Wertschätzung globaler Gemeinschaften und Verbindungen
-            beeinträchtigen. Ein aktuelles Beispiel ist die zunehmende
-            Fremdenfeindlichkeit in vielen Ländern, die zu politischen
-            Spannungen und gesellschaftlicher Spaltung führt.
-          </li>
-          <li>
-            <strong>Mangelnde Anerkennung der eigenen Privilegien:</strong>
-            Stolz auf eine Flagge, ohne die eigenen Privilegien zu erkennen,
-            kann dazu führen, dass man die Herausforderungen und
-            Ungerechtigkeiten, mit denen andere Menschen konfrontiert sind,
-            nicht wahrnimmt. Zum Beispiel kann jemand in einem wohlhabenden
-            Land stolz auf den wirtschaftlichen Erfolg sein, ohne die
-            historische Ausbeutung und die globalen Ungleichheiten zu
-            berücksichtigen, die zu diesem Wohlstand beigetragen haben.
-          </li>
-        </ul>
-      </div>
-      <h2 class="text-2xl font-semibold mb-4">
-        Sinnvolle Beispiele, worauf man stolz sein kann 🍀
-      </h2>
-      <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
-
-        <p class="mb-4">
-          Statt auf eine Flagge oder eine Nation, können Menschen Stolz auf
-          folgende Aspekte entwickeln, die auf persönlichen Leistungen und
-          Beiträgen basieren:
-        </p>
-        <ul class="list-disc list-inside mb-4 space-y-2">
-          <li>
-            <strong>Individuelle Leistungen:</strong> Akademische Erfolge,
-            berufliche Meilensteine oder künstlerische Errungenschaften sind
-            Beispiele für persönliche Leistungen, auf die man stolz sein kann.
-            Diese spiegeln die Anstrengungen, das Talent und das Engagement
-            einer Person wider.
-          </li>
-          <li>
-            <strong>Soziales Engagement:</strong> Freiwilligenarbeit,
-            gemeinnützige Projekte oder der Einsatz für soziale Gerechtigkeit
-            und Umweltbewusstsein sind wertvolle Beiträge zur Gesellschaft,
-            auf die man stolz sein kann. Zum Beispiel kann jemand stolz auf
-            seine Arbeit bei einer lokalen Tafel sein, die Bedürftigen hilft.
-          </li>
-          <li>
-            <strong>Zwischenmenschliche Beziehungen:</strong> Auf starke und
-            unterstützende Beziehungen zu Familie und Freunden stolz zu sein,
-            ist ebenso wichtig. Diese Beziehungen basieren auf gegenseitigem
-            Respekt, Vertrauen und Unterstützung, was oft erhebliches
-            Engagement und emotionale Investition erfordert.
-          </li>
-          <li>
-            <strong>Persönliche Entwicklung:</strong> Stolz auf die
-            Überwindung persönlicher Herausforderungen, das Erreichen von
-            Zielen oder das Wachstum und die Entwicklung als Individuum zu
-            sein, ist ebenfalls bedeutend. Beispiele hierfür können die
-            Bewältigung gesundheitlicher Probleme oder das Erlernen neuer
-            Fähigkeiten und Hobbys sein.
-          </li>
-        </ul>
-      </div>
-      <h2 class="text-2xl font-semibold mb-4">
-        Warum unnötiger Stolz auf eine Flagge schädlich sein kann ☠️
-      </h2>
-      <div class="card bg-white shadow-md p-4 dark:bg-gray-800">
-
-        <p class="mb-4">
-          Übermäßiger Nationalstolz kann zu internationalen Spannungen und
-          Konflikten führen. Geschichte und Gegenwart zeigen zahlreiche
-          Beispiele, wie nationalistische Bewegungen zu Kriegen und Gewalt
-          geführt haben, wie etwa die Konflikte auf dem Balkan in den 1990er
-          Jahren.
-        </p>
-        <ul class="list-disc list-inside mb-4 space-y-2">
-          <li>
-            <strong>Förderung von Konflikten:</strong> Übertriebener
-            Nationalstolz kann zu internationalen Spannungen und Konflikten
-            führen. Geschichte und Gegenwart zeigen zahlreiche Beispiele, wie
-            nationalistische Bewegungen zu Kriegen und Gewalt geführt haben,
-            wie etwa die Konflikte auf dem Balkan in den 1990er Jahren.
-          </li>
-          <li>
-            <strong>Soziale Spaltung:</strong> Nationalstolz kann soziale
-            Spaltung und Diskriminierung innerhalb eines Landes fördern. Ein
-            Beispiel ist die rassistische und fremdenfeindliche Gewalt, die
-            oft durch nationalistische Ideologien motiviert wird.
-          </li>
-          <li>
-            <strong>Verhinderung globaler Zusammenarbeit:</strong> Ein
-            übermäßiger Fokus auf nationale Interessen kann die globale
-            Zusammenarbeit und den Fortschritt behindern. Themen wie
-            Klimawandel, Pandemien und internationale Sicherheit erfordern
-            eine Zusammenarbeit über nationale Grenzen hinweg. Nationalismus
-            kann diese Zusammenarbeit untergraben.
-          </li>
-          <li>
-            <strong>Ignoranz gegenüber eigenen Mängeln:</strong> Übermäßiger
-            Nationalstolz kann dazu führen, dass die eigenen Mängel und
-            Probleme eines Landes übersehen werden. Dies kann Reformen und
-            Fortschritte behindern. Beispielsweise können Menschen, die auf
-            ihre Nation stolz sind, anfälliger für Propaganda sein und die
-            Notwendigkeit von sozialer Gerechtigkeit oder politischen Reformen
-            ignorieren.
-          </li>
-        </ul>
-        <p class="mb-4">
-          Indem man den Stolz auf persönliche Leistungen und Beiträge
-          fokussiert, anstatt auf zufällige Zugehörigkeiten, kann man eine
-          gesündere und inklusivere Gesellschaft fördern.
-        </p>
-      </div>
-    </section>
+  <!-- Marquee -->
+  <div class="marquee relative z-10" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Schwarz <span class="gold">●</span> Rot <span class="gold">●</span> Gold</span>
+      <span>3 Farben statt 7 Pannen</span>
+      <span class="gold">RAL 9005 · 3020 · 1021</span>
+      <span>Fail with Flags</span>
+      <span>Schwarz <span class="gold">●</span> Rot <span class="gold">●</span> Gold</span>
+      <span>3 Farben statt 7 Pannen</span>
+      <span class="gold">RAL 9005 · 3020 · 1021</span>
+      <span>Fail with Flags</span>
+    </div>
   </div>
-  <script>
-    function sharePage() {
-      if (navigator.share) {
-        const baseUrl = window.location.href.split('?')[0]; // Basierend auf der aktuellen URL ohne bestehende Query-Parameter
-        const utmParams = '?utm_source=share&utm_medium=social&utm_campaign=stolzwichtel';
-        const shareUrl = baseUrl + utmParams;
 
-        navigator
-          .share({
-            title: 'Stolzwichtel - Spaß mit Flaggen 🚩',
-            text: 'Schau dir diese interessante Seite über die deutsche Flagge und ihre Farben an und warum du einfach kein Patriot bist 🤷🏼‍♂️! #stolzwichtel',
-            url: shareUrl,
-          })
-          .then(() => {
-            console.log('Erfolgreich geteilt');
-          })
-          .catch((error) => {
-            console.error('Fehler beim Teilen', error);
-          });
-      } else {
-        alert('Teilen ist auf diesem Gerät nicht unterstützt.');
-      }
+  <main class="relative z-10">
+
+    <!-- ============ DER FALL ============ -->
+    <section class="px-5 py-20">
+      <div class="max-w-6xl mx-auto grid gap-12 lg:grid-cols-[1.2fr_1fr] items-start">
+        <div class="reveal reveal-1">
+          <span class="kicker">§ 1 · Der Fall</span>
+          <h2 class="font-display display-md uppercase mt-3 mb-6">Sie sind wieder da</h2>
+          <div class="serif space-y-5 text-xl" style="color: var(--ink-soft);">
+            <p>
+              Es ist wieder soweit: Im Juni inszenieren sich Rechte als „Patrioten“, schwenken
+              Schwarz-Rot-Gold und ziehen für Fotos in die Stadt. Auf einem dieser Gruppenfotos
+              waren die Flaggen gut sichtbar – und bei <strong style="color:var(--ink)">sieben Personen</strong>
+              ließen sich die Farben sauber auslesen.
+            </p>
+            <p>
+              Das Ergebnis ist von beeindruckender Konsequenz: <strong style="color:var(--accent)">kein
+              einziger</strong> traf die offiziellen Farben der Bundesflagge. Sieben Versuche, null Treffer.
+            </p>
+            <p class="serif italic text-2xl" style="border-left:4px solid var(--accent); padding-left:1.25rem; color:var(--ink);">
+              „Fun with Flags“ war gestern – heute läuft „Fail with Flags“.
+            </p>
+            <p class="text-lg" style="color:var(--ink-faint)">
+              <strong style="color:var(--ink-soft)">Stolzwichtel</strong> ist ein satirisches Spaßprojekt
+              über die Schwarz-Rot-Gold-Farbeimer, die mit den echten Farben der Flagge ungefähr so viel
+              zu tun haben wie eine Bratwurst mit Veganismus.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal reveal-2">
+          <div class="frame frame-shadow p-2">
+            <img src="img/fun_with_flaggs.gif" alt="Fun with Flags" class="w-full block">
+          </div>
+          <p class="label mt-3 text-center">Beweismittel · bewegtbild</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DER CLOU / REVEAL ============ -->
+    <section class="px-5 py-20 band">
+      <div class="max-w-5xl mx-auto text-center reveal reveal-1">
+        <span class="kicker" style="color: var(--flag-gold)">§ 2 · Der Clou</span>
+        <h2 class="font-display display-lg uppercase mt-4 mb-8" style="color: var(--band-fg);">
+          Die 7 Farben sind <span style="color:var(--flag-gold)">kein Zufall</span>
+        </h2>
+        <p class="serif text-2xl max-w-3xl mx-auto" style="color: rgba(244,241,233,.85);">
+          Was wie sieben Patzer aussieht, ist in Wahrheit ein System: Es sind exakt die
+          <strong style="color:var(--flag-gold)">sieben Abstufungen des „Stolzmonat“-Farbverlaufs</strong> –
+          einer schwarz-rot-goldenen Verlaufsfahne, mit der rechtsextreme Kreise die Regenbogenflagge
+          des Pride Month nachäffen.
+          <a class="cite" href="https://www.amadeu-antonio-stiftung.de/rechtsextreme-kampagne-gegen-den-pride-month-der-stolzmonat-114483/" target="_blank" rel="noopener">Quelle ↗</a>
+        </p>
+        <p class="serif text-xl max-w-3xl mx-auto mt-6" style="color: rgba(244,241,233,.7);">
+          Heißt: Sie tragen mit voller Überzeugung eine Verhöhnungs-Grafik spazieren – und halten sie
+          für die deutsche Flagge. Man kann sich diese Pointe nicht ausdenken.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ BEWEISAUFNAHME / VERGLEICH ============ -->
+    <section id="beweis" class="px-5 py-20">
+      <div class="max-w-6xl mx-auto">
+        <div class="reveal reveal-1 text-center mb-14">
+          <span class="kicker">§ 3 · Beweisaufnahme</span>
+          <h2 class="font-display display-lg uppercase mt-3">
+            <span style="color:var(--accent)">Falsch</span> &nbsp;vs.&nbsp; <span style="color:var(--accent-warm)">Richtig</span>
+          </h2>
+          <p class="serif text-xl mt-3" style="color:var(--ink-faint)">Mit der Maus über die Felder fahren, um die Farbcodes zu sehen.</p>
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto">
+          <!-- Falsch -->
+          <div class="reveal reveal-1 frame frame-shadow p-7">
+            <div class="flex items-center justify-between mb-5">
+              <h3 class="font-display text-3xl uppercase" style="color:var(--accent)">Falsch ✗</h3>
+              <span class="label">7 Versuche</span>
+            </div>
+            <div class="grid grid-cols-7 gap-1.5 mb-4">
+              <div class="swatch h-20" style="background:#010000" data-tip="#010000"></div>
+              <div class="swatch h-20" style="background:#430e14" data-tip="#430e14"></div>
+              <div class="swatch h-20" style="background:#8e1819" data-tip="#8e1819"></div>
+              <div class="swatch h-20" style="background:#e7252b" data-tip="#e7252b"></div>
+              <div class="swatch h-20" style="background:#f07d2f" data-tip="#f07d2f"></div>
+              <div class="swatch h-20" style="background:#ffc90e" data-tip="#ffc90e"></div>
+              <div class="swatch h-20" style="background:#faea27" data-tip="#faea27"></div>
+            </div>
+            <p class="font-mono text-sm" style="color:var(--ink-faint)">// 7 Stufen, 0 Treffer. Beeindruckende Konsistenz.</p>
+          </div>
+
+          <!-- Richtig -->
+          <div class="reveal reveal-2 frame frame-shadow p-7" style="border-color: var(--accent-warm);">
+            <div class="flex items-center justify-between mb-5">
+              <h3 class="font-display text-3xl uppercase" style="color:var(--accent-warm)">Richtig ✓</h3>
+              <span class="label">3 Farben</span>
+            </div>
+            <div class="grid grid-cols-3 gap-1.5 mb-4">
+              <div class="swatch h-20" style="background:#000000" data-tip="Schwarz · #000000"></div>
+              <div class="swatch h-20" style="background:#ff0000" data-tip="Rot · #FF0000"></div>
+              <div class="swatch h-20" style="background:#ffcc00" data-tip="Gold · #FFCC00"></div>
+            </div>
+            <p class="font-mono text-sm" style="color:var(--ink-faint)">// Schwarz. Rot. Gold. Mehr nicht. 🇩🇪</p>
+          </div>
+        </div>
+
+        <!-- Full flag comparison -->
+        <div class="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto mt-10">
+          <div class="reveal reveal-1">
+            <p class="label mb-2" style="color:var(--accent)">Die „Flagge“ der Stolzwichtel</p>
+            <div class="flag-real" style="height: 168px; border-color: var(--accent);">
+              <div style="background:#010000"></div>
+              <div style="background:#e7252b"></div>
+              <div style="background:#faea27"></div>
+            </div>
+          </div>
+          <div class="reveal reveal-2">
+            <p class="label mb-2" style="color:var(--accent-warm)">Die echte Bundesflagge 🇩🇪</p>
+            <div class="flag-real" style="height: 168px; border-color: var(--accent-warm);">
+              <div style="background:#000000"></div>
+              <div style="background:#ff0000"></div>
+              <div style="background:#ffcc00"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AMTLICHE FARBEN / DATENBLATT ============ -->
+    <section id="farben" class="px-5 py-20" style="background: var(--paper-2);">
+      <div class="max-w-5xl mx-auto">
+        <div class="reveal reveal-1 mb-10">
+          <span class="kicker">§ 4 · Datenblatt</span>
+          <h2 class="font-display display-md uppercase mt-3">Die amtlichen Farben</h2>
+          <p class="serif text-xl mt-3 max-w-3xl" style="color:var(--ink-soft)">
+            So einfach wäre es gewesen. Die Bundesregierung definiert Schwarz-Rot-Gold seit ihrem
+            Corporate-Design-Beschluss von 1999 zentimetergenau – inklusive RAL, HEX, RGB, CMYK und Pantone.
+            <a class="cite" href="https://de.wikipedia.org/wiki/Flagge_Deutschlands" target="_blank" rel="noopener">Quelle ↗</a>
+          </p>
+        </div>
+
+        <div class="reveal reveal-2 frame frame-shadow overflow-x-auto">
+          <table class="w-full text-left font-mono text-sm" style="border-collapse: collapse; min-width: 560px;">
+            <thead>
+              <tr style="border-bottom: 3px solid var(--rule-strong);">
+                <th class="p-4 label" style="color:var(--ink)">Farbe</th>
+                <th class="p-4 label" style="color:var(--ink)">RAL</th>
+                <th class="p-4 label" style="color:var(--ink)">HEX</th>
+                <th class="p-4 label" style="color:var(--ink)">RGB</th>
+                <th class="p-4 label" style="color:var(--ink)">CMYK</th>
+                <th class="p-4 label" style="color:var(--ink)">Pantone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--rule);">
+                <td class="p-4"><span class="inline-flex items-center gap-2"><span class="inline-block w-5 h-5" style="background:#000;border:1px solid var(--rule-strong)"></span>Schwarz</span></td>
+                <td class="p-4">9005</td>
+                <td class="p-4" style="color:var(--accent)">#000000</td>
+                <td class="p-4">0·0·0</td>
+                <td class="p-4">0·0·0·100</td>
+                <td class="p-4">Black</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--rule);">
+                <td class="p-4"><span class="inline-flex items-center gap-2"><span class="inline-block w-5 h-5" style="background:#ff0000;border:1px solid var(--rule-strong)"></span>Rot</span></td>
+                <td class="p-4">3020</td>
+                <td class="p-4" style="color:var(--accent)">#FF0000</td>
+                <td class="p-4">255·0·0</td>
+                <td class="p-4">0·100·100·0</td>
+                <td class="p-4">485</td>
+              </tr>
+              <tr>
+                <td class="p-4"><span class="inline-flex items-center gap-2"><span class="inline-block w-5 h-5" style="background:#ffcc00;border:1px solid var(--rule-strong)"></span>Gold</span></td>
+                <td class="p-4">1021</td>
+                <td class="p-4" style="color:var(--accent)">#FFCC00</td>
+                <td class="p-4">255·204·0</td>
+                <td class="p-4">0·12·100·5</td>
+                <td class="p-4">Yellow</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-5 mt-8">
+          <div class="reveal reveal-1 frame p-5">
+            <div class="font-display text-4xl" style="color:var(--accent)">3 : 5</div>
+            <p class="serif mt-1" style="color:var(--ink-soft)">Seitenverhältnis von Höhe zu Länge des Flaggentuchs.
+              <a class="cite" href="https://de.wikipedia.org/wiki/Flagge_Deutschlands" target="_blank" rel="noopener">Quelle ↗</a></p>
+          </div>
+          <div class="reveal reveal-2 frame p-5">
+            <div class="font-display text-4xl" style="color:var(--accent)">Art. 22</div>
+            <p class="serif mt-1" style="color:var(--ink-soft)">Grundgesetz: „Die Bundesflagge ist schwarz-rot-gold.“ Seit 23. Mai 1949.
+              <a class="cite" href="https://www.gesetze-im-internet.de/gg/art_22.html" target="_blank" rel="noopener">Quelle ↗</a></p>
+          </div>
+          <div class="reveal reveal-3 frame p-5">
+            <div class="font-display text-4xl" style="color:var(--accent)">9017?</div>
+            <p class="serif mt-1" style="color:var(--ink-soft)">Für Flaggenstoffe empfahl das BMI sogar RAL 9017 / 3020 / 1028 – Nuancen, die kennt man, oder man kennt sie nicht.
+              <a class="cite" href="https://de.wikipedia.org/wiki/Flagge_Deutschlands" target="_blank" rel="noopener">Quelle ↗</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GESCHICHTE / TIMELINE ============ -->
+    <section id="geschichte" class="px-5 py-20">
+      <div class="max-w-4xl mx-auto">
+        <div class="reveal reveal-1 mb-12">
+          <span class="kicker">§ 5 · Akte Geschichte</span>
+          <h2 class="font-display display-md uppercase mt-3">Woher Schwarz-Rot-Gold wirklich kommt</h2>
+          <p class="serif text-xl mt-3" style="color:var(--ink-soft)">
+            Die Farben stehen für Freiheit, Einheit und Demokratie – erkämpft gegen Obrigkeit und
+            Kleinstaaterei. Wer sie schwenkt, sollte ihre Geschichte kennen.
+            <a class="cite" href="https://de.wikipedia.org/wiki/Schwarz-Rot-Gold" target="_blank" rel="noopener">Quelle ↗</a>
+          </p>
+        </div>
+
+        <div class="timeline space-y-9">
+          <div class="tl-item reveal reveal-1">
+            <span class="tl-dot"></span>
+            <div class="font-display text-3xl" style="color:var(--accent)">1813</div>
+            <h3 class="font-ui text-xl font-bold mt-1 mb-1">Lützowsche Jäger</h3>
+            <p class="serif" style="color:var(--ink-soft)">Im Befreiungskrieg gegen Napoleon tragen die Freikorps schwarze Uniformen mit roten Aufschlägen und goldenen Knöpfen – die spätere Farbkombination ist geboren.</p>
+          </div>
+          <div class="tl-item reveal reveal-2">
+            <span class="tl-dot"></span>
+            <div class="font-display text-3xl" style="color:var(--accent)">1832</div>
+            <h3 class="font-ui text-xl font-bold mt-1 mb-1">Hambacher Fest</h3>
+            <p class="serif" style="color:var(--ink-soft)">Rund 30.000 Menschen ziehen zum Hambacher Schloss und führen Schwarz-Rot-Gold als Zeichen für Freiheit und nationale Einheit – ein Gründungsmoment der deutschen Demokratie.</p>
+          </div>
+          <div class="tl-item reveal reveal-3">
+            <span class="tl-dot"></span>
+            <div class="font-display text-3xl" style="color:var(--accent)">1848</div>
+            <h3 class="font-ui text-xl font-bold mt-1 mb-1">Paulskirche</h3>
+            <p class="serif" style="color:var(--ink-soft)">Die Frankfurter Nationalversammlung erklärt Schwarz-Rot-Gold zu den Farben des Deutschen Bundes – das Banner der ersten gesamtdeutschen Demokratiebewegung.</p>
+          </div>
+          <div class="tl-item reveal reveal-4">
+            <span class="tl-dot gold"></span>
+            <div class="font-display text-3xl" style="color:var(--accent-warm)">1949</div>
+            <h3 class="font-ui text-xl font-bold mt-1 mb-1">Grundgesetz</h3>
+            <p class="serif" style="color:var(--ink-soft)">Artikel 22 macht Schwarz-Rot-Gold zur Flagge der Bundesrepublik. Demokratische Farben für eine demokratische Republik – kein Eigentum selbsternannter „Patrioten“.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DIE GEKAPERTE FLAGGE ============ -->
+    <section id="gekapert" class="px-5 py-20">
+      <div class="max-w-5xl mx-auto">
+        <div class="reveal reveal-1 mb-10">
+          <span class="kicker">§ 6 · Die Vereinnahmung</span>
+          <h2 class="font-display display-md uppercase mt-3">Die gekaperte Flagge</h2>
+          <p class="serif text-xl mt-3 max-w-3xl" style="color:var(--ink-soft)">
+            Hier wird es bitter ironisch. Schwarz-Rot-Gold ist die Fahne der <strong style="color:var(--ink)">demokratischen
+            Revolution</strong> – erkämpft gegen Fürsten, Obrigkeit und Unterdrückung. Ausgerechnet diese Farben
+            schwenken heute jene, deren politische Ahnen sie bekämpft und verboten haben.
+          </p>
+        </div>
+
+        <!-- SRG vs SWR -->
+        <div class="grid md:grid-cols-2 gap-8 mb-10">
+          <div class="reveal reveal-1">
+            <p class="label mb-2" style="color:var(--accent-warm)">Schwarz-Rot-Gold · Demokratie &amp; Freiheit</p>
+            <div class="flag-real" style="height:150px; border-color:var(--accent-warm);">
+              <div style="background:#000000"></div>
+              <div style="background:#ff0000"></div>
+              <div style="background:#ffcc00"></div>
+            </div>
+            <p class="serif mt-3 text-base" style="color:var(--ink-soft)">Farben der Burschenschaften, des Hambacher Fests 1832 und der Paulskirche 1848 – Symbol für Einheit, Bürgerrechte und Demokratie.
+              <a class="cite" href="https://de.wikipedia.org/wiki/Schwarz-Rot-Gold" target="_blank" rel="noopener">Quelle ↗</a></p>
+          </div>
+          <div class="reveal reveal-2">
+            <p class="label mb-2" style="color:var(--ink-faint)">Schwarz-Weiß-Rot · Obrigkeit &amp; „Reich“</p>
+            <div class="flag-real" style="height:150px; border-color:var(--ink-faint);">
+              <div style="background:#000000"></div>
+              <div style="background:#ffffff"></div>
+              <div style="background:#cc0000"></div>
+            </div>
+            <p class="serif mt-3 text-base" style="color:var(--ink-soft)">Flagge des Kaiserreichs – heute Erkennungszeichen in der rechtsextremen und „Reichsbürger“-Szene. <em>Das</em> ist ihre eigentliche Tradition.
+              <a class="cite" href="https://de.wikipedia.org/wiki/Schwarz-Wei%C3%9F-Rot" target="_blank" rel="noopener">Quelle ↗</a></p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5">
+          <div class="reveal reveal-1 frame p-6">
+            <div class="font-display text-3xl mb-2" style="color:var(--accent)">1832 / 1848</div>
+            <p class="serif" style="color:var(--ink-soft)">Schwarz-Rot-Gold steht für den Aufstand gegen autoritäre Herrschaft – für Freiheit, Demokratie und Menschenrechte.
+              <a class="cite" href="https://de.wikipedia.org/wiki/Schwarz-Rot-Gold" target="_blank" rel="noopener">Quelle ↗</a></p>
+          </div>
+          <div class="reveal reveal-2 frame p-6">
+            <div class="font-display text-3xl mb-2" style="color:var(--accent)">1933 abgeschafft</div>
+            <p class="serif" style="color:var(--ink-soft)">Die Nationalsozialisten <strong style="color:var(--ink)">schafften Schwarz-Rot-Gold ab</strong> – gerade weil es für Freiheit und Demokratie stand. Sie setzten auf Schwarz-Weiß-Rot und Hakenkreuz.
+              <a class="cite" href="https://de.wikipedia.org/wiki/Schwarz-Rot-Gold" target="_blank" rel="noopener">Quelle ↗</a></p>
+          </div>
+          <div class="reveal reveal-3 frame p-6">
+            <div class="font-display text-3xl mb-2" style="color:var(--accent)">Die Pointe</div>
+            <p class="serif" style="color:var(--ink-soft)">Wer Schwarz-Rot-Gold gegen Vielfalt und offene Gesellschaft schwenkt, trägt die Fahne genau jener Demokratiebewegung, die seine eigene Tradition bekämpft hat. Doppelt danebengegriffen: bei den Farben <em>und</em> bei der Bedeutung.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STOLZMONAT ERKLÄRT ============ -->
+    <section id="stolzmonat" class="px-5 py-20" style="background: var(--paper-2);">
+      <div class="max-w-5xl mx-auto">
+        <div class="reveal reveal-1 mb-10">
+          <span class="kicker">§ 7 · Hintergrund</span>
+          <h2 class="font-display display-md uppercase mt-3">Was „Stolzmonat“ wirklich ist</h2>
+          <p class="serif text-xl mt-3 max-w-3xl" style="color:var(--ink-soft)">
+            Kurz gesagt: keine Folklore, sondern eine rechtsextreme Online-Kampagne gegen queere Menschen.
+            Die Fakten, mit Quelle.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="reveal reveal-1 frame p-6">
+            <div class="font-display text-3xl mb-2" style="color:var(--accent)">Seit 2023</div>
+            <p class="serif" style="color:var(--ink-soft)">Der „Stolzmonat“ wird seit 2023 aus dem Umfeld der „Honigwabe“ – einer rechtsextremen Troll-Community auf X – als Gegenkampagne zum Pride Month ausgerufen.
+              <a class="cite" href="https://www.amadeu-antonio-stiftung.de/rechtsextreme-kampagne-gegen-den-pride-month-der-stolzmonat-114483/" target="_blank" rel="noopener">Quelle ↗</a></p>
+          </div>
+          <div class="reveal reveal-2 frame p-6">
+            <div class="font-display text-3xl mb-2" style="color:var(--accent)">14 Mio.</div>
+            <p class="serif" style="color:var(--ink-soft)">Allein auf TikTok erreichte der Hashtag #Stolzmonat Millionen Aufrufe und schwappte über alle großen Plattformen – aufgegriffen bis in AfD-Kreise.
+              <a class="cite" href="https://www.amadeu-antonio-stiftung.de/rechtsextreme-kampagne-gegen-den-pride-month-der-stolzmonat-114483/" target="_blank" rel="noopener">Quelle ↗</a></p>
+          </div>
+          <div class="reveal reveal-3 frame p-6">
+            <div class="font-display text-3xl mb-2" style="color:var(--accent)">7-Stufen-Fahne</div>
+            <p class="serif" style="color:var(--ink-soft)">Das „Logo“ ist ein schwarz-rot-goldener Verlauf in sieben Abstufungen – eine bewusste Verhöhnung der Regenbogenflagge. Genau diese sieben Töne tauchen oben als „Asservat A“ wieder auf.
+              <a class="cite" href="https://www.mimikama.org/stolzmonat-als-rechte-hetzkampagne-gegen-lgbtqia/" target="_blank" rel="noopener">Quelle ↗</a></p>
+          </div>
+          <div class="reveal reveal-4 frame p-6">
+            <div class="font-display text-3xl mb-2" style="color:var(--accent)">™ STLZMNT</div>
+            <p class="serif" style="color:var(--ink-soft)">Pointe der Geschichte: Ein queerer Aktivist sicherte sich die Markenrechte am Begriff „Stolzmonat“ – worauf die Szene auf „STLZMNT“ ausweichen musste.
+              <a class="cite" href="https://www.amadeu-antonio-stiftung.de/rechtsextreme-kampagne-gegen-den-pride-month-der-stolzmonat-114483/" target="_blank" rel="noopener">Quelle ↗</a></p>
+          </div>
+        </div>
+
+        <div class="reveal reveal-1 mt-8 frame frame-shadow p-7" style="border-color: var(--accent-warm);">
+          <p class="serif text-xl" style="color:var(--ink-soft)">
+            <strong style="color:var(--ink)">Zum Kontext:</strong> Der echte Pride Month im Juni erinnert an die
+            <strong style="color:var(--ink)">Stonewall-Aufstände vom 28. Juni 1969</strong> in New York und feiert Vielfalt,
+            Selbstbestimmung und gleiche Rechte. Den Begriff „Stolz“ dagegen für eine völkisch-nationale
+            Trotzreaktion zu kapern, ist keine Antwort darauf – sondern der Versuch, ihn zu vergiften.
+            <a class="cite" href="https://www.amadeu-antonio-stiftung.de/rechtsextreme-kampagne-gegen-den-pride-month-der-stolzmonat-114483/" target="_blank" rel="noopener">Quelle ↗</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STOLZ WORAUF ============ -->
+    <section id="nationalstolz" class="px-5 py-20 band">
+      <div class="max-w-4xl mx-auto">
+        <div class="reveal reveal-1 mb-12">
+          <span class="kicker" style="color:var(--flag-gold)">§ 8 · Die Grundsatzfrage</span>
+          <h2 class="font-display display-lg uppercase mt-3" style="color:var(--band-fg)">Stolz – worauf eigentlich?</h2>
+          <p class="serif text-xl mt-4 max-w-3xl" style="color:rgba(244,241,233,.8)">
+            Man kann nicht stolz sein auf etwas, das man selbst nie geleistet hat. Der Ort der Geburt ist
+            Zufall, keine Leistung. Stolz verdient, wer etwas <em>aufbaut</em> – Freiheit, Recht, Demokratie.
+            Genau das unterscheidet Patriotismus von Nationalismus.
+          </p>
+        </div>
+
+        <!-- Quote 1: Heinemann -->
+        <figure class="reveal reveal-1 m-0 mb-10">
+          <blockquote class="font-display uppercase leading-tight" style="font-size:clamp(1.6rem,4vw,2.8rem); color:var(--flag-gold);">
+            „Ach was, ich liebe keine Staaten,<br>ich liebe meine Frau; fertig!“
+          </blockquote>
+          <figcaption class="serif italic text-lg mt-4" style="color:rgba(244,241,233,.7)">
+            — Gustav Heinemann, späterer Bundespräsident, in DER SPIEGEL, 13. Januar 1969
+            <a class="cite" href="https://de.wikiquote.org/wiki/Gustav_Heinemann" target="_blank" rel="noopener">Quelle ↗</a>
+          </figcaption>
+        </figure>
+
+        <div class="reveal reveal-2 double-rule my-10" style="border-color:rgba(244,241,233,.3)"></div>
+
+        <!-- Quote 2: Rau -->
+        <figure class="reveal reveal-2 m-0 mb-10">
+          <blockquote class="serif italic leading-snug" style="font-size:clamp(1.5rem,3.5vw,2.4rem); color:var(--band-fg);">
+            „Ein Patriot ist jemand, der sein eigenes Vaterland liebt.
+            Ein Nationalist ist jemand, der die Vaterländer der anderen verachtet.“
+          </blockquote>
+          <figcaption class="serif italic text-lg mt-4" style="color:rgba(244,241,233,.7)">
+            — Bundespräsident Johannes Rau, Rede zum Ver.di-Gründungskongress, 19. März 2001
+            <a class="cite" href="https://www.bundespraesident.de/SharedDocs/Reden/DE/Johannes-Rau/Reden/2001/03/20010319_Rede.html" target="_blank" rel="noopener">Quelle ↗</a>
+          </figcaption>
+        </figure>
+
+        <!-- Verfassungspatriotismus -->
+        <div class="reveal reveal-3 frame-shadow p-7 mt-12" style="background:rgba(244,241,233,.05); border:2px solid var(--flag-gold);">
+          <p class="label mb-2" style="color:var(--flag-gold)">Der bessere Stolz</p>
+          <h3 class="font-display text-3xl uppercase mb-3" style="color:var(--band-fg)">Verfassungspatriotismus</h3>
+          <p class="serif text-lg" style="color:rgba(244,241,233,.8)">
+            Der Politikwissenschaftler Dolf Sternberger prägte 1979 zum 30. Geburtstag des Grundgesetzes den
+            Begriff: Statt auf Abstammung, Boden oder „die Nation“ stolz zu sein, soll man stolz sein auf den
+            <strong style="color:var(--band-fg)">freiheitlichen Verfassungsstaat</strong> – auf Demokratie,
+            Grundrechte und Freiheit. Also auf das, was Menschen gemeinsam <em>erbaut</em> haben und jeden Tag
+            verteidigen. Jürgen Habermas machte das Konzept später populär.
+            <a class="cite" href="https://www.bpb.de/shop/zeitschriften/apuz/archiv/536463/verfassungspatriotismus-als-identitaetskonzept-der-nation/" target="_blank" rel="noopener">Quelle ↗</a>
+          </p>
+          <p class="serif text-lg mt-4" style="color:var(--flag-gold)">
+            Kurz: Stolz auf das Grundgesetz – nicht auf die Farbe eines Farbeimers. 🇩🇪
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VIDEO BEWEIS ============ -->
+    <section class="px-5 py-20">
+      <div class="max-w-4xl mx-auto reveal reveal-1">
+        <span class="kicker">§ 9 · Bewegtbild</span>
+        <h2 class="font-display display-md uppercase mt-3 mb-6">Die Farben der Flagge</h2>
+        <div class="frame frame-shadow p-2">
+          <iframe class="w-full block" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/ooEeNzzKxfk"
+            title="Die Farben der deutschen Flagge" frameborder="0" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="label mt-3">Selbst mit sieben Versuchen keine Chance.</p>
+      </div>
+    </section>
+
+    <!-- ============ WARUM ES WICHTIG IST ============ -->
+    <section class="px-5 py-20 band">
+      <div class="max-w-5xl mx-auto">
+        <div class="reveal reveal-1 mb-12">
+          <span class="kicker" style="color:var(--flag-gold)">§ 10 · Warum es zählt</span>
+          <h2 class="font-display display-md uppercase mt-3" style="color:var(--band-fg)">Warum die Farben wichtig sind</h2>
+          <p class="serif text-xl mt-3 max-w-3xl" style="color:rgba(244,241,233,.8)">
+            Wer sich als „Patriot“ inszeniert, sollte mindestens die Grundlagen kennen. Genau daran scheitert es.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="reveal reveal-1 p-6" style="border:2px solid rgba(244,241,233,.2)">
+            <div class="text-4xl mb-3">🎨</div>
+            <h3 class="font-ui text-xl font-bold mb-2" style="color:var(--flag-gold)">Verfälschung der Symbolik</h3>
+            <p class="serif" style="color:rgba(244,241,233,.7)">Wenn nicht mal die Farben stimmen, wie glaubwürdig ist dann der Anspruch, für die Werte dieser Flagge einzustehen?</p>
+          </div>
+          <div class="reveal reveal-2 p-6" style="border:2px solid rgba(244,241,233,.2)">
+            <div class="text-4xl mb-3">🤝</div>
+            <h3 class="font-ui text-xl font-bold mb-2" style="color:var(--flag-gold)">Mangelnder Respekt</h3>
+            <p class="serif" style="color:rgba(244,241,233,.7)">Wer vorgibt, sein Land zu lieben, sollte dessen Symbole respektieren – und sich die Mühe machen, sie zu lernen.</p>
+          </div>
+          <div class="reveal reveal-3 p-6" style="border:2px solid rgba(244,241,233,.2)">
+            <div class="text-4xl mb-3">⚖️</div>
+            <h3 class="font-ui text-xl font-bold mb-2" style="color:var(--flag-gold)">Demokratische Bedeutung</h3>
+            <p class="serif" style="color:rgba(244,241,233,.7)">Schwarz-Rot-Gold steht für Freiheit, Einheit und Demokratie – Werte, die kein politisches Lager allein gepachtet hat.</p>
+          </div>
+          <div class="reveal reveal-4 p-6" style="border:2px solid rgba(244,241,233,.2)">
+            <div class="text-4xl mb-3">😕</div>
+            <h3 class="font-ui text-xl font-bold mb-2" style="color:var(--flag-gold)">Falsche Vorbilder</h3>
+            <p class="serif" style="color:rgba(244,241,233,.7)">Falsche Darstellungen verbreiten sich weiter und verleiten andere, den Unsinn zu wiederholen. Bei nationalen Symbolen besonders peinlich.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="px-5 py-24">
+      <div class="max-w-4xl mx-auto text-center reveal reveal-1">
+        <h2 class="font-display display-lg uppercase">Teile das Dossier 📣</h2>
+        <p class="serif text-2xl mt-5 max-w-2xl mx-auto" style="color:var(--ink-soft)">
+          Hilf mit, dass selbsternannte „Patrioten“ endlich die richtigen Farben lernen.
+          Ein Klick für dich, ein großer Schritt für die Allgemeinbildung. 🎓
+        </p>
+        <div class="mt-9 flex flex-wrap gap-4 justify-center">
+          <button class="btn !text-lg" onclick="sharePage()">↗ Jetzt teilen</button>
+          <a href="#quellen" class="btn btn-ghost !text-lg">📚 Quellen prüfen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUELLEN ============ -->
+    <section id="quellen" class="px-5 py-20" style="background: var(--paper-2);">
+      <div class="max-w-4xl mx-auto reveal reveal-1">
+        <span class="kicker">Anhang · Belege</span>
+        <h2 class="font-display display-md uppercase mt-3 mb-3">Quellen</h2>
+        <p class="serif text-lg mb-8" style="color:var(--ink-faint)">
+          Jede Behauptung auf dieser Seite ist belegt. Hier sind die Belege.
+        </p>
+        <ol class="font-mono text-sm space-y-4" style="color:var(--ink-soft); counter-reset: src;">
+          <li class="rule-thin pt-4">
+            <span class="kicker" style="color:var(--ink-faint)">[1]</span>
+            Wikipedia – <a class="tlink" href="https://de.wikipedia.org/wiki/Flagge_Deutschlands" target="_blank" rel="noopener">Flagge Deutschlands</a>
+            · amtliche Farbwerte (RAL/HEX/RGB/CMYK/Pantone), Seitenverhältnis 3:5, Corporate-Design-Beschluss 1999.
+          </li>
+          <li class="rule-thin pt-4">
+            <span class="kicker" style="color:var(--ink-faint)">[2]</span>
+            Wikipedia – <a class="tlink" href="https://de.wikipedia.org/wiki/Schwarz-Rot-Gold" target="_blank" rel="noopener">Schwarz-Rot-Gold</a>
+            · Geschichte der Farben: Lützower Jäger 1813, Hambacher Fest 1832, Paulskirche 1848.
+          </li>
+          <li class="rule-thin pt-4">
+            <span class="kicker" style="color:var(--ink-faint)">[3]</span>
+            Amadeu Antonio Stiftung – <a class="tlink" href="https://www.amadeu-antonio-stiftung.de/rechtsextreme-kampagne-gegen-den-pride-month-der-stolzmonat-114483/" target="_blank" rel="noopener">Rechtsextreme Kampagne gegen den Pride Month: Der „Stolzmonat“</a>
+            · Herkunft, „Honigwabe“, AfD-Bezug, Markenrechts-Coup, Reichweite.
+          </li>
+          <li class="rule-thin pt-4">
+            <span class="kicker" style="color:var(--ink-faint)">[4]</span>
+            mimikama – <a class="tlink" href="https://www.mimikama.org/stolzmonat-als-rechte-hetzkampagne-gegen-lgbtqia/" target="_blank" rel="noopener">„Stolzmonat“ als rechte Hetzkampagne</a>
+            · Einordnung der 7-Stufen-Verlaufsfahne und der Kampagne.
+          </li>
+          <li class="rule-thin pt-4">
+            <span class="kicker" style="color:var(--ink-faint)">[5]</span>
+            Bundesrecht – <a class="tlink" href="https://www.gesetze-im-internet.de/gg/art_22.html" target="_blank" rel="noopener">Grundgesetz Art. 22</a>
+            · „Die Bundesflagge ist schwarz-rot-gold.“
+          </li>
+          <li class="rule-thin pt-4">
+            <span class="kicker" style="color:var(--ink-faint)">[6]</span>
+            Bundespräsidialamt – <a class="tlink" href="https://www.bundespraesident.de/SharedDocs/Reden/DE/Johannes-Rau/Reden/2001/03/20010319_Rede.html" target="_blank" rel="noopener">Rede von Johannes Rau zum Ver.di-Gründungskongress, 19.03.2001</a>
+            · Primärquelle für „Patriot vs. Nationalist“ und „stolz auf das, was wir aufgebaut haben“.
+          </li>
+          <li class="rule-thin pt-4">
+            <span class="kicker" style="color:var(--ink-faint)">[7]</span>
+            DER SPIEGEL (13.01.1969), zitiert über <a class="tlink" href="https://de.wikiquote.org/wiki/Gustav_Heinemann" target="_blank" rel="noopener">Wikiquote: Gustav Heinemann</a>
+            · „Ich liebe keine Staaten, ich liebe meine Frau; fertig!“
+          </li>
+          <li class="rule-thin pt-4">
+            <span class="kicker" style="color:var(--ink-faint)">[8]</span>
+            Wikipedia – <a class="tlink" href="https://de.wikipedia.org/wiki/Schwarz-Wei%C3%9F-Rot" target="_blank" rel="noopener">Schwarz-Weiß-Rot</a>
+            · Kaiserreichs- und NS-Tradition, heutiges Erkennungszeichen der rechtsextremen und „Reichsbürger“-Szene.
+          </li>
+          <li class="rule-thin pt-4">
+            <span class="kicker" style="color:var(--ink-faint)">[9]</span>
+            bpb / Bundeszentrale für politische Bildung – <a class="tlink" href="https://www.bpb.de/shop/zeitschriften/apuz/archiv/536463/verfassungspatriotismus-als-identitaetskonzept-der-nation/" target="_blank" rel="noopener">Verfassungspatriotismus</a>
+            · Begriff von Dolf Sternberger (FAZ, 23.05.1979), popularisiert von Jürgen Habermas.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="relative z-10 px-5 py-14 band">
+    <div class="max-w-6xl mx-auto">
+      <div class="rule-thick" style="border-color: rgba(244,241,233,.25);"></div>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pt-8">
+        <div>
+          <div class="font-display text-4xl uppercase" style="color:var(--band-fg)">Stolzwichtel</div>
+          <p class="serif mt-2 max-w-md" style="color:rgba(244,241,233,.65)">
+            Ein satirisches Dossier für mehr Allgemeinbildung. Stolz auf das, was man kann –
+            nicht auf das, wo man zufällig geboren wurde.
+          </p>
+        </div>
+        <div class="text-right">
+          <div class="flex gap-1.5 justify-end mb-3">
+            <span class="inline-block w-8 h-3" style="background:#000;border:1px solid rgba(244,241,233,.3)"></span>
+            <span class="inline-block w-8 h-3" style="background:#ff0000"></span>
+            <span class="inline-block w-8 h-3" style="background:#ffcc00"></span>
+          </div>
+          <p class="label" style="color:rgba(244,241,233,.5)">Made with 💛 &amp; viel 🤦‍♂️</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== Theme Toggle =====
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.classList.contains('dark');
+      html.classList.toggle('dark', !isDark);
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      document.querySelector('meta[name=theme-color]')
+        ?.setAttribute('content', isDark ? '#f4f1e9' : '#0c0a09');
     }
 
+    (function initTheme() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const dark = saved ? saved === 'dark' : prefersDark;
+      document.documentElement.classList.toggle('dark', dark);
+      const mc = document.querySelector('meta[name=theme-color]');
+      if (mc) mc.setAttribute('content', dark ? '#0c0a09' : '#f4f1e9');
+    })();
+
+    // ===== Scroll reveal =====
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ===== Share =====
+    function sharePage() {
+      const base = window.location.href.split('?')[0];
+      const url = base + '?utm_source=share&utm_medium=social&utm_campaign=stolzwichtel';
+      const data = {
+        title: 'Stolzwichtel · 7 Versuche, 0 Treffer 🚩',
+        text: 'Sieben „Patrioten“, sieben Flaggen, null richtige Farben. Das satirische Dossier über Schwarz-Rot-Gold. 🤷🏼‍♂️',
+        url
+      };
+      if (navigator.share) {
+        navigator.share(data).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(url)
+          .then(() => alert('✅ Link in die Zwischenablage kopiert!'))
+          .catch(() => alert('Teilen wird auf diesem Gerät nicht unterstützt.'));
+      }
+    }
   </script>
-  <script defer src="https://statistics.stolzwichtel.de/script.js"
+
+  <script defer src="https://statistics.disane.dev/script.js"
     data-website-id="3caf6392-c4aa-4aec-993c-2d604607bb84"></script>
 </body>
-
 
 </html>

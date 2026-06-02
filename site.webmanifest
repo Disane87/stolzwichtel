@@ -1,6 +1,7 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "Stolzwichtel",
+  "short_name": "Stolzwichtel",
+  "description": "Satirisches Dossier über Schwarz-Rot-Gold, den „Stolzmonat“ und Leute, die nicht mal ihre eigene Flagge kennen.",
   "icons": [
     {
       "src": "img/android-chrome-192x192.png",
@@ -13,7 +14,9 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "theme_color": "#0c0a09",
+  "background_color": "#0c0a09",
+  "display": "standalone",
+  "start_url": "/",
+  "lang": "de"
 }
